@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ignite Training Portal</title>
+
+<style>
+
+:root{
+    --primary:#0f172a;
+    --secondary:#2563eb;
+    --light:#f8fafc;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+body{
+    background:var(--light);
+}
+
+header{
+    background:var(--primary);
+    color:white;
+    padding:20px;
+    text-align:center;
+}
+
+.back-btn{
+    color:white;
+    text-decoration:none;
+    display:inline-block;
+    margin-top:10px;
+}
+
+.hero{
+    background:white;
+    text-align:center;
+    padding:60px 20px;
+    box-shadow:0 2px 8px rgba(0,0,0,.05);
+}
+
+.hero h1{
+    color:var(--primary);
+    margin-bottom:10px;
+}
+
+.hero p{
+    color:#666;
+}
+
+.button-area{
+    text-align:center;
+    margin:30px;
+}
+
+.switch-btn{
+    background:var(--secondary);
+    color:white;
+    border:none;
+    padding:12px 25px;
+    border-radius:8px;
+    cursor:pointer;
+    margin:10px;
+    font-size:16px;
+    transition:.3s;
+}
+
+.switch-btn:hover{
+    transform:translateY(-2px);
+}
+
+.container{
+    width:95%;
+    max-width:1400px;
+    margin:auto;
+    padding-bottom:50px;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(350px,1fr));
+    gap:25px;
+}
+
+.card{
+    background:white;
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+    text-align:center;
+    transition:.3s;
+    min-height:180px;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+}
+
+.card h3{
+    color:var(--secondary);
+    margin-bottom:10px;
+}
+
+.card p{
+    margin-bottom:15px;
+    line-height:1.6;
+}
+
+.video-btn{
+    background:#2563eb;
+    color:white;
+    border:none;
+    padding:12px 25px;
+    border-radius:8px;
+    cursor:pointer;
+    font-size:16px;
+}
+
+.video-btn:hover{
+    background:#1d4ed8;
+}
+
+.hidden{
+    display:none;
+}
+
+.video-wrapper{
+    margin-top:20px;
+    width:100%;
+    height:350px;
+    overflow:hidden;
+    border-radius:10px;
+}
+
+.video-wrapper iframe{
+    width:100%;
+    height:100%;
+    border:none;
+}
+
+#scenarioSection{
+    display:none;
+}
+
+@media(max-width:768px){
+
+.grid{
+    grid-template-columns:1fr;
+}
+
+.video-wrapper{
+    height:250px;
+}
+
+.hero{
+    padding:40px 15px;
+}
+
+.hero h1{
+    font-size:30px;
+}
+
+.switch-btn{
+    width:90%;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+<h2>Ignite IT Services</h2>
+
+<a href="index.html" class="back-btn">
+← Back to Home
+</a>
+
+</header>
+
+<section class="hero">
+
+<h1>Training Portal</h1>
+
+<p>
+Recruiter Training, PDFs,
+Important Information and Scenarios
+</p>
+
+</section>
+
+<div class="button-area">
+
+<button class="switch-btn" onclick="showTraining()">
+📚 Training Materials
+</button>
+
+<button class="switch-btn" onclick="showScenarios()">
+🎯 Scenarios
+</button>
+
+</div>
+
+<div class="container">
+
+<div id="trainingSection">
+
+<div class="grid">
+
+<div class="card">
+
+<h3>Recruiter Basics</h3>
+
+<p>Complete Recruiter Training Program</p>
+
+<button class="video-btn"
+onclick="toggleVideo('recruiterBasicsVideo')">
+📄 Open PDF
+</button>
+
+<div id="recruiterBasicsVideo"
+class="video-wrapper hidden">
+
+<iframe
+src="https://drive.google.com/file/d/1BWnUnN69LC6tD7VDf53JbdKMOQURd59b/preview"
+allow="autoplay; fullscreen"
+allowfullscreen>
+</iframe>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h3>Recruiter Guide PDF</h3>
+
+<p>Training Documentation</p>
+
+<button class="video-btn"
+onclick="toggleVideo('guidePdfVideo')">
+📄 Open PDF
+</button>
+
+<div id="guidePdfVideo"
+class="video-wrapper hidden">
+
+<iframe
+src="https://drive.google.com/file/d/162kQrTn6rE500WaiYsKBKWFkRLtnw11M/preview"
+allow="autoplay; fullscreen"
+allowfullscreen>
+</iframe>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h3>Important Information</h3>
+
+<p>Recruitment Process and Guidelines</p>
+
+<button class="video-btn"
+onclick="toggleVideo('importantInfoVideo')">
+📄 Open PDF
+</button>
+
+<div id="importantInfoVideo"
+class="video-wrapper hidden">
+
+<iframe
+src="https://drive.google.com/file/d/1yhDnVunHfsCwEOLTB4deDm7QwVrxZEsg/preview"
+allow="autoplay; fullscreen"
+allowfullscreen>
+</iframe>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- Scenario Section -->
+
+<div id="scenarioSection">
+
+<div class="grid">
+
+<div class="card">
+
+<h3>Google Sheets</h3>
+
+<p>How to maintain Application Tracking Sheets?</p>
+
+<button class="video-btn"
+onclick="toggleVideo('sheetVideo')">
+▶ Watch Video
+</button>
+
+<div id="sheetVideo"
+class="video-wrapper hidden">
+
+<iframe
+src="https://drive.google.com/file/d/1E-cQnBoQWUAioMMpHZT9yby0CEIbsrbZ/preview"
+allow="autoplay; fullscreen"
+allowfullscreen>
+</iframe>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h3>Jobright</h3>
+
+<p>Jobright Setup & Filters</p>
+
+<button class="video-btn"
+onclick="toggleVideo('jobrightVideo')">
+▶ Watch Video
+</button>
+
+<div id="jobrightVideo"
+class="video-wrapper hidden">
+
+<iframe
+src="https://drive.google.com/file/d/1PysDqjHCWU81RlAmSZEAvpfpbjQ8_G2q/preview"
+allow="autoplay; fullscreen"
+allowfullscreen>
+</iframe>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h3>AI Resume Tailor</h3>
+
+<p>How to use AI Resume Tailor Tool?</p>
+
+<button class="video-btn"
+onclick="toggleVideo('resumeVideo')">
+▶ Watch Video
+</button>
+
+<div id="resumeVideo"
+class="video-wrapper hidden">
+
+<iframe
+src="https://drive.google.com/file/d/1AtXN81i0FdMXIdJsvc0ggStTsd0mMcpp/preview"
+allow="autoplay; fullscreen"
+allowfullscreen>
+</iframe>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h3>Application Process</h3>
+
+<p>How to do Applications?</p>
+
+<button class="video-btn"
+onclick="toggleVideo('applicationProcessVideo')">
+▶ Watch Video
+</button>
+
+<div id="applicationProcessVideo"
+class="video-wrapper hidden">
+
+<iframe
+src="https://drive.google.com/file/d/1yhDnVunHfsCwEOLTB4deDm7QwVrxZEsg/preview"
+allow="autoplay; fullscreen"
+allowfullscreen>
+</iframe>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h3>Application Incomplete</h3>
+
+<p>Application Filled & Incomplete Application</p>
+
+<button class="video-btn"
+onclick="toggleVideo('incompleteVideo')">
+▶ Watch Video
+</button>
+
+<div id="incompleteVideo"
+class="video-wrapper hidden">
+
+<iframe
+src="https://drive.google.com/file/d/1tpnXBYBVFu6kBrk9PPMAnudT2NXUiQSm/preview"
+allow="autoplay; fullscreen"
+allowfullscreen>
+</iframe>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h3>HashbyHQ</h3>
+
+<p>HashbyHQ Site Application Filling</p>
+
+<button class="video-btn"
+onclick="toggleVideo('hashbyhqVideo')">
+▶ Watch Video
+</button>
+
+<div id="hashbyhqVideo"
+class="video-wrapper hidden">
+
+<iframe
+src="https://drive.google.com/file/d/1QcqvheWdRSb7W9qhCmQeaMxL_5QjoN4q/preview"
+allow="autoplay; fullscreen"
+allowfullscreen>
+</iframe>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h3>Work Progress Tracker</h3>
+
+<p>Daily Recruiter Workflow</p>
+
+<button class="video-btn"
+onclick="toggleVideo('trackerVideo')">
+▶ Watch Video
+</button>
+
+<div id="trackerVideo"
+class="video-wrapper hidden">
+
+<iframe
+src="https://drive.google.com/file/d/1OBJ20mpW8nZ_j5NdE5cxTfBx1aEQj24J/preview"
+allow="autoplay; fullscreen"
+allowfullscreen>
+</iframe>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h3>Vendor Communication</h3>
+
+<p>Vendor Interaction Process</p>
+
+<button class="video-btn"
+onclick="toggleVideo('vendorVideo')">
+▶ Watch Video
+</button>
+
+<div id="vendorVideo"
+class="video-wrapper hidden">
+
+<iframe
+src="https://drive.google.com/file/d/1OBJ20mpW8nZ_j5NdE5cxTfBx1aEQj24J/preview"
+allow="autoplay; fullscreen"
+allowfullscreen>
+</iframe>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h3>Client Requirements</h3>
+
+<p>Requirement Understanding Process</p>
+
+<button class="video-btn"
+onclick="toggleVideo('clientVideo')">
+▶ Watch Video
+</button>
+
+<div id="clientVideo"
+class="video-wrapper hidden">
+
+<iframe
+src="https://drive.google.com/file/d/1OBJ20mpW8nZ_j5NdE5cxTfBx1aEQj24J/preview"
+allow="autoplay; fullscreen"
+allowfullscreen>
+</iframe>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+function toggleVideo(videoId){
+
+    const allVideos =
+    document.querySelectorAll('.video-wrapper');
+
+    allVideos.forEach(video => {
+
+        if(video.id !== videoId){
+            video.classList.add('hidden');
+        }
+
+    });
+
+    document
+        .getElementById(videoId)
+        .classList.toggle('hidden');
+}
+
+function showTraining(){
+
+    document.getElementById("trainingSection")
+        .style.display = "block";
+
+    document.getElementById("scenarioSection")
+        .style.display = "none";
+}
+
+function showScenarios(){
+
+    document.getElementById("trainingSection")
+        .style.display = "none";
+
+    document.getElementById("scenarioSection")
+        .style.display = "block";
+}
+
+</script>
+
+</body>
+</html>
