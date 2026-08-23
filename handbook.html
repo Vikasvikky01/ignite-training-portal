@@ -1,0 +1,4199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<title>
+Ignova Technologies - Recruiter Training Handbook
+</title>
+
+
+<style>
+
+/* =========================================
+   ROOT
+========================================= */
+
+:root{
+
+    --primary:#0f172a;
+    --secondary:#2563eb;
+    --accent:#06b6d4;
+
+    --light:#f8fafc;
+    --dark:#1e293b;
+
+    --border:#e2e8f0;
+
+    --sidebar-width:280px;
+
+}
+
+
+/* =========================================
+   RESET
+========================================= */
+
+*{
+
+    margin:0;
+    padding:0;
+
+    box-sizing:border-box;
+
+    font-family:
+        'Segoe UI',
+        Arial,
+        sans-serif;
+
+}
+
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+
+body{
+
+    background:#f8fafc;
+
+    color:#334155;
+
+}
+
+
+/* =========================================
+   FIXED TOP HEADER
+========================================= */
+
+.top-header{
+
+    position:fixed;
+
+    top:0;
+    left:0;
+    right:0;
+
+    height:72px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #0f172a,
+            #172554
+        );
+
+    color:white;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    padding:
+        0 28px;
+
+    z-index:2000;
+
+    box-shadow:
+        0 3px 12px
+        rgba(0,0,0,.18);
+
+}
+
+
+.logo-area{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+}
+
+
+.logo-icon{
+
+    width:40px;
+    height:40px;
+
+    border-radius:10px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #2563eb,
+            #06b6d4
+        );
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    font-size:21px;
+
+}
+
+
+.logo-text{
+
+    font-size:20px;
+
+    font-weight:700;
+
+}
+
+
+.header-title{
+
+    font-size:16px;
+
+    opacity:.9;
+
+}
+
+
+.back-home{
+
+    color:white;
+
+    text-decoration:none;
+
+    padding:
+        9px 16px;
+
+    border:
+        1px solid
+        rgba(255,255,255,.25);
+
+    border-radius:7px;
+
+    transition:.2s;
+
+}
+
+
+.back-home:hover{
+
+    background:
+        rgba(255,255,255,.1);
+
+}
+
+
+/* =========================================
+   LAYOUT
+========================================= */
+
+.page-layout{
+
+    display:flex;
+
+    padding-top:72px;
+
+}
+
+
+/* =========================================
+   SIDEBAR
+========================================= */
+
+.sidebar{
+
+    position:fixed;
+
+    top:72px;
+    left:0;
+    bottom:0;
+
+    width:
+        var(--sidebar-width);
+
+    background:white;
+
+    border-right:
+        1px solid
+        var(--border);
+
+    overflow-y:auto;
+
+    z-index:1500;
+
+}
+
+
+.sidebar-heading{
+
+    padding:
+        22px 20px 12px;
+
+    font-size:12px;
+
+    font-weight:700;
+
+    text-transform:uppercase;
+
+    color:#64748b;
+
+    letter-spacing:.7px;
+
+}
+
+
+.sidebar-link{
+
+    width:100%;
+
+    border:none;
+
+    background:white;
+
+    text-align:left;
+
+    padding:
+        14px 18px;
+
+    display:flex;
+
+    align-items:flex-start;
+
+    gap:12px;
+
+    cursor:pointer;
+
+    color:#334155;
+
+    font-size:14px;
+
+    line-height:1.4;
+
+    border-left:
+        4px solid
+        transparent;
+
+    transition:.2s;
+
+}
+
+
+.sidebar-link:hover{
+
+    background:#eff6ff;
+
+    color:var(--secondary);
+
+}
+
+
+.sidebar-link.active{
+
+    background:#eff6ff;
+
+    color:var(--secondary);
+
+    border-left-color:
+        var(--secondary);
+
+    font-weight:600;
+
+}
+
+
+.sidebar-number{
+
+    min-width:28px;
+
+    height:28px;
+
+    border-radius:7px;
+
+    background:#e2e8f0;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-size:12px;
+
+    font-weight:700;
+
+}
+
+
+.sidebar-link.active
+.sidebar-number{
+
+    background:var(--secondary);
+
+    color:white;
+
+}
+
+
+/* =========================================
+   MAIN CONTENT
+========================================= */
+
+.main-content{
+
+    margin-left:
+        var(--sidebar-width);
+
+    width:
+        calc(
+            100% -
+            var(--sidebar-width)
+        );
+
+    padding:
+        38px 45px 70px;
+
+}
+
+
+.content-wrapper{
+
+    max-width:1050px;
+
+    margin:auto;
+
+}
+
+
+/* =========================================
+   SECTION
+========================================= */
+
+.documentation-section{
+
+    display:none;
+
+    animation:
+        fadeIn .25s ease;
+
+}
+
+
+.documentation-section.active{
+
+    display:block;
+
+}
+
+
+@keyframes fadeIn{
+
+    from{
+
+        opacity:0;
+
+        transform:
+            translateY(8px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+            translateY(0);
+
+    }
+
+}
+
+
+/* =========================================
+   PAGE TITLE
+========================================= */
+
+.page-title{
+
+    background:white;
+
+    padding:30px;
+
+    border-radius:14px;
+
+    border:
+        1px solid
+        var(--border);
+
+    box-shadow:
+        0 4px 14px
+        rgba(15,23,42,.05);
+
+    margin-bottom:25px;
+
+}
+
+
+.page-title h1{
+
+    color:var(--primary);
+
+    font-size:32px;
+
+    margin-bottom:8px;
+
+}
+
+
+.page-title p{
+
+    color:#64748b;
+
+    font-size:15px;
+
+}
+
+
+/* =========================================
+   CONTENT CARDS
+========================================= */
+
+.content-card{
+
+    background:white;
+
+    border:
+        1px solid
+        var(--border);
+
+    border-radius:14px;
+
+    padding:28px;
+
+    margin-bottom:22px;
+
+    box-shadow:
+        0 3px 12px
+        rgba(15,23,42,.04);
+
+}
+
+
+.content-card h2{
+
+    color:var(--primary);
+
+    font-size:23px;
+
+    margin-bottom:15px;
+
+    padding-bottom:10px;
+
+    border-bottom:
+        1px solid
+        var(--border);
+
+}
+
+
+.content-card h3{
+
+    color:var(--secondary);
+
+    font-size:18px;
+
+    margin-top:20px;
+
+    margin-bottom:10px;
+
+}
+
+
+.content-card p{
+
+    line-height:1.8;
+
+    margin-bottom:12px;
+
+}
+
+
+.content-card ul{
+
+    margin:
+        10px 0 15px 22px;
+
+}
+
+
+.content-card li{
+
+    margin-bottom:9px;
+
+    line-height:1.65;
+
+}
+
+
+.content-card ol{
+
+    margin:
+        10px 0 15px 22px;
+
+}
+
+
+.content-card ol li{
+
+    margin-bottom:10px;
+
+    line-height:1.65;
+
+}
+
+
+/* =========================================
+   HIGHLIGHT BOX
+========================================= */
+
+.highlight{
+
+    background:#eff6ff;
+
+    border-left:
+        4px solid
+        var(--secondary);
+
+    padding:17px 20px;
+
+    border-radius:8px;
+
+    margin:
+        18px 0;
+
+}
+
+
+.success-box{
+
+    background:#ecfdf5;
+
+    border-left:
+        4px solid
+        #10b981;
+
+    padding:17px 20px;
+
+    border-radius:8px;
+
+    margin:
+        18px 0;
+
+}
+
+
+.warning-box{
+
+    background:#fff7ed;
+
+    border-left:
+        4px solid
+        #f97316;
+
+    padding:17px 20px;
+
+    border-radius:8px;
+
+    margin:
+        18px 0;
+
+}
+
+
+/* =========================================
+   STAGE CARDS
+========================================= */
+
+.stage-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(250px,1fr)
+        );
+
+    gap:18px;
+
+    margin-top:18px;
+
+}
+
+
+.stage-card{
+
+    background:#f8fafc;
+
+    border:
+        1px solid
+        var(--border);
+
+    border-radius:10px;
+
+    padding:20px;
+
+}
+
+
+.stage-card h3{
+
+    margin-top:0;
+
+}
+
+
+/* =========================================
+   CHECKLIST
+========================================= */
+
+.check-list{
+
+    list-style:none;
+
+    margin-left:0 !important;
+
+}
+
+
+.check-list li{
+
+    position:relative;
+
+    padding-left:28px;
+
+}
+
+
+.check-list li::before{
+
+    content:"✓";
+
+    position:absolute;
+
+    left:0;
+
+    top:0;
+
+    color:#10b981;
+
+    font-weight:bold;
+
+}
+
+
+/* =========================================
+   DON'T LIST
+========================================= */
+
+.dont-list{
+
+    list-style:none;
+
+    margin-left:0 !important;
+
+}
+
+
+.dont-list li{
+
+    position:relative;
+
+    padding-left:28px;
+
+}
+
+
+.dont-list li::before{
+
+    content:"✕";
+
+    position:absolute;
+
+    left:0;
+
+    top:0;
+
+    color:#ef4444;
+
+    font-weight:bold;
+
+}
+
+
+/* =========================================
+   FAQ
+========================================= */
+
+.faq{
+
+    margin-bottom:18px;
+
+    padding-bottom:15px;
+
+    border-bottom:
+        1px solid
+        var(--border);
+
+}
+
+
+.faq:last-child{
+
+    border-bottom:none;
+
+}
+
+
+.faq-question{
+
+    color:var(--secondary);
+
+    font-weight:700;
+
+    margin-bottom:7px;
+
+}
+
+
+/* =========================================
+   TABLE
+========================================= */
+
+.performance-table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+    margin-top:15px;
+
+}
+
+
+.performance-table th,
+.performance-table td{
+
+    padding:12px;
+
+    border:
+        1px solid
+        var(--border);
+
+    text-align:left;
+
+}
+
+
+.performance-table th{
+
+    background:#eff6ff;
+
+    color:var(--primary);
+
+}
+
+
+/* =========================================
+   BACK TO TOP
+========================================= */
+
+.back-top{
+
+    position:fixed;
+
+    right:25px;
+    bottom:25px;
+
+    width:45px;
+    height:45px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:
+        var(--secondary);
+
+    color:white;
+
+    font-size:20px;
+
+    cursor:pointer;
+
+    box-shadow:
+        0 5px 15px
+        rgba(0,0,0,.2);
+
+    display:none;
+
+    z-index:2500;
+
+}
+
+
+.back-top.show{
+
+    display:block;
+
+}
+
+
+/* =========================================
+   MOBILE BUTTON
+========================================= */
+
+.mobile-menu{
+
+    display:none;
+
+    background:none;
+
+    border:none;
+
+    color:white;
+
+    font-size:25px;
+
+    cursor:pointer;
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media(max-width:900px){
+
+    .header-title{
+
+        display:none;
+
+    }
+
+
+    .mobile-menu{
+
+        display:block;
+
+    }
+
+
+    .sidebar{
+
+        transform:
+            translateX(-100%);
+
+        transition:
+            transform .25s ease;
+
+    }
+
+
+    .sidebar.open{
+
+        transform:
+            translateX(0);
+
+        box-shadow:
+            5px 0 20px
+            rgba(0,0,0,.15);
+
+    }
+
+
+    .main-content{
+
+        margin-left:0;
+
+        width:100%;
+
+        padding:
+            25px 18px 60px;
+
+    }
+
+
+    .top-header{
+
+        padding:
+            0 16px;
+
+    }
+
+
+    .page-title h1{
+
+        font-size:25px;
+
+    }
+
+}
+
+
+@media(max-width:500px){
+
+    .logo-text{
+
+        font-size:16px;
+
+    }
+
+
+    .back-home{
+
+        font-size:12px;
+
+        padding:
+            7px 10px;
+
+    }
+
+
+    .content-card{
+
+        padding:20px;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================
+     FIXED TOP HEADER
+========================================= -->
+
+<header class="top-header">
+
+    <div class="logo-area">
+
+        <button
+            class="mobile-menu"
+            id="mobileMenu"
+            onclick="toggleSidebar()">
+
+            ☰
+
+        </button>
+
+
+        <div class="logo-icon">
+
+            I
+
+        </div>
+
+
+        <div class="logo-text">
+
+            Ignova Technologies
+
+        </div>
+
+    </div>
+
+
+    <div class="header-title">
+
+        Recruiter Training Handbook & SOP
+
+    </div>
+
+
+    <a
+        href="training.html"
+        class="back-home">
+
+        ← Training Portal
+
+    </a>
+
+</header>
+
+
+<div class="page-layout">
+
+
+<!-- =========================================
+     SIDEBAR
+========================================= -->
+
+<aside
+    class="sidebar"
+    id="sidebar">
+
+
+    <div class="sidebar-heading">
+
+        Training Handbook
+
+    </div>
+
+
+    <button
+        class="sidebar-link active"
+        data-section="welcome"
+        onclick="openSection('welcome')">
+
+        <span class="sidebar-number">
+            01
+        </span>
+
+        <span>
+            Welcome & About Ignova
+        </span>
+
+    </button>
+
+
+    <button
+        class="sidebar-link"
+        data-section="job-structure"
+        onclick="openSection('job-structure')">
+
+        <span class="sidebar-number">
+            02
+        </span>
+
+        <span>
+            Job Structure & Responsibilities
+        </span>
+
+    </button>
+
+
+    <button
+        class="sidebar-link"
+        data-section="client-profile"
+        onclick="openSection('client-profile')">
+
+        <span class="sidebar-number">
+            03
+        </span>
+
+        <span>
+            Client Profile Access &
+            Performance Monitoring
+        </span>
+
+    </button>
+
+
+    <button
+        class="sidebar-link"
+        data-section="job-rules"
+        onclick="openSection('job-rules')">
+
+        <span class="sidebar-number">
+            04
+        </span>
+
+        <span>
+            Job Rules, Regulations &
+            Performance Standards
+        </span>
+
+    </button>
+
+
+    <button
+        class="sidebar-link"
+        data-section="compensation"
+        onclick="openSection('compensation')">
+
+        <span class="sidebar-number">
+            05
+        </span>
+
+        <span>
+            Compensation & Growth
+        </span>
+
+    </button>
+
+
+    <button
+        class="sidebar-link"
+        data-section="sop"
+        onclick="openSection('sop')">
+
+        <span class="sidebar-number">
+            06
+        </span>
+
+        <span>
+            Standard Operating Procedure
+        </span>
+
+    </button>
+
+
+    <button
+        class="sidebar-link"
+        data-section="code-conduct"
+        onclick="openSection('code-conduct')">
+
+        <span class="sidebar-number">
+            07
+        </span>
+
+        <span>
+            Code of Conduct, FAQ &
+            Final Checklist
+        </span>
+
+    </button>
+
+
+</aside>
+
+
+<!-- =========================================
+     MAIN CONTENT
+========================================= -->
+
+<main class="main-content">
+
+<div class="content-wrapper">
+
+
+<!-- =========================================
+     SECTION 01
+========================================= -->
+
+<section
+    id="welcome"
+    class="documentation-section active">
+
+
+    <div class="page-title">
+
+        <h1>
+            Welcome to Ignova Technologies
+        </h1>
+
+        <p>
+            Recruiter Training Handbook &
+            Standard Operating Procedure
+        </p>
+
+    </div>
+
+
+    <div class="content-card">
+
+        <h2>
+            Welcome to Ignova Technologies
+        </h2>
+
+        <p>
+            Congratulations on joining our company.
+            We are excited to have you as part
+            of our team.
+        </p>
+
+        <p>
+            This handbook is designed to guide you
+            through every stage of your training
+            and work. Please read it carefully
+            before beginning your internship/job.
+        </p>
+
+        <p>
+            Understanding these instructions will
+            help you perform your responsibilities
+            accurately and efficiently.
+        </p>
+
+
+        <h3>
+            This document explains:
+        </h3>
+
+        <ul>
+            <li>Company overview</li>
+            <li>Training process</li>
+            <li>Daily responsibilities</li>
+            <li>Work standards</li>
+            <li>Rules and regulations</li>
+            <li>Performance expectations</li>
+            <li>Compensation structure</li>
+            <li>Communication guidelines</li>
+        </ul>
+
+
+        <div class="warning-box">
+
+            Following these instructions is
+            mandatory throughout your internship.
+
+        </div>
+
+    </div>
+
+
+    <div class="content-card">
+
+        <h2>
+            About Ignova Technologies
+        </h2>
+
+        <p>
+            Ignova Technologies is a United
+            States-based consulting company that
+            helps job seekers secure employment
+            opportunities in the U.S. market.
+        </p>
+
+        <p>
+            Many professionals in the U.S. balance
+            full-time jobs, higher education, and
+            personal responsibilities. Because of
+            this, they often do not have enough time
+            to apply for hundreds of suitable job
+            openings every week.
+        </p>
+
+        <p>
+            Our Recruiting Team assists these
+            clients by managing their job
+            application process professionally
+            and efficiently.
+        </p>
+
+
+        <h3>
+            Our Objective
+        </h3>
+
+        <ol>
+
+            <li>
+                Help qualified candidates receive
+                more interview opportunities by
+                submitting accurate, high-quality
+                job applications consistently.
+            </li>
+
+            <li>
+                Every application you submit can
+                directly impact a client's career.
+                Therefore, every task must be
+                completed with responsibility,
+                accuracy, and attention to detail.
+            </li>
+
+        </ol>
+
+    </div>
+
+
+    <div class="content-card">
+
+        <h2>
+            Our Mission
+        </h2>
+
+        <p>
+            Our mission is to maximize interview
+            opportunities for every client by
+            ensuring that no suitable job
+            opportunity is missed.
+        </p>
+
+
+        <h3>
+            We achieve this through:
+        </h3>
+
+        <ul class="check-list">
+
+            <li>
+                High-quality job applications
+            </li>
+
+            <li>
+                Accurate resume tailoring
+            </li>
+
+            <li>
+                Smart application strategies
+            </li>
+
+            <li>
+                Consistent daily effort
+            </li>
+
+            <li>
+                Continuous process improvement
+            </li>
+
+            <li>
+                Automation and technology
+            </li>
+
+        </ul>
+
+    </div>
+
+
+    <div class="content-card">
+
+        <h2>
+            Why This Job Matters
+        </h2>
+
+        <p>
+            This job provides an opportunity to
+            develop practical skills while
+            contributing to a real-world
+            recruitment process.
+        </p>
+
+
+        <h3>
+            During the Job, you will gain
+            experience in:
+        </h3>
+
+        <ul>
+
+            <li>Recruitment operations</li>
+
+            <li>Resume analysis</li>
+
+            <li>ATS-friendly resume tailoring</li>
+
+            <li>Job market research</li>
+
+            <li>Professional communication</li>
+
+            <li>Data management</li>
+
+            <li>Process documentation</li>
+
+            <li>Productivity tracking</li>
+
+        </ul>
+
+
+        <p>
+            Top-performing recruiters may also
+            become eligible to join the Technical
+            Team, where they can contribute to
+            automation projects such as browser
+            extensions, resume tailoring tools,
+            and AI-powered recruitment solutions.
+        </p>
+
+    </div>
+
+
+</section>
+
+
+<!-- =========================================
+     SECTION 02
+========================================= -->
+
+<section
+    id="job-structure"
+    class="documentation-section">
+
+
+    <div class="page-title">
+
+        <h1>
+            Job Structure
+        </h1>
+
+        <p>
+            Training stages, work schedule and
+            daily responsibilities
+        </p>
+
+    </div>
+
+
+    <div class="content-card">
+
+        <h2>
+            The Job Consists of Multiple Stages
+        </h2>
+
+
+        <div class="stage-grid">
+
+
+            <div class="stage-card">
+
+                <h3>
+                    Stage 1 – Self-Learning
+                </h3>
+
+                <p>
+                    You will first study all the
+                    provided training materials.
+                </p>
+
+                <ul>
+
+                    <li>Training videos</li>
+
+                    <li>Documentation</li>
+
+                    <li>Workflow guides</li>
+
+                    <li>Application examples</li>
+
+                    <li>Supporting resources</li>
+
+                </ul>
+
+                <p>
+                    Read every document carefully
+                    before asking questions.
+                </p>
+
+            </div>
+
+
+            <div class="stage-card">
+
+                <h3>
+                    Stage 2 – Interactive Training
+                </h3>
+
+                <p>
+                    After completing the
+                    self-learning phase, a live
+                    training session will be
+                    conducted.
+                </p>
+
+                <ul>
+
+                    <li>
+                        Complete workflow demonstration
+                    </li>
+
+                    <li>
+                        Common mistakes discussion
+                    </li>
+
+                    <li>
+                        Questions answered
+                    </li>
+
+                    <li>
+                        Expectations explained
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <div class="stage-card">
+
+                <h3>
+                    Stage 3 – Five-Day Testing
+                </h3>
+
+                <p>
+                    Every trainee must successfully
+                    complete a mandatory testing
+                    period before beginning official
+                    work.
+                </p>
+
+                <p>
+                    <strong>
+                        Duration:
+                    </strong>
+                    5 consecutive working days
+                </p>
+
+                <p>
+                    <strong>
+                        Daily Target:
+                    </strong>
+                    50 applications
+                </p>
+
+                <p>
+                    <strong>
+                        Total Target:
+                    </strong>
+                    250 applications
+                </p>
+
+            </div>
+
+
+        </div>
+
+
+        <h3>
+            Testing Purpose
+        </h3>
+
+        <ul>
+
+            <li>Accuracy</li>
+
+            <li>Learning ability</li>
+
+            <li>Attention to detail</li>
+
+            <li>Consistency</li>
+
+            <li>Quality of work</li>
+
+            <li>Suitability for the role</li>
+
+        </ul>
+
+
+        <div class="warning-box">
+
+            Successful completion of this phase
+            is mandatory before moving to the
+            official job.
+
+        </div>
+
+    </div>
+
+
+    <div class="content-card">
+
+        <h2>
+            Work Schedule
+        </h2>
+
+        <div class="highlight">
+
+            <strong>
+                Standard Working Hours:
+            </strong>
+
+            6:00 PM – 11:00 PM (IST)
+
+        </div>
+
+        <p>
+            Depending on workload and client
+            requirements, work may occasionally
+            extend until 2:00 AM.
+        </p>
+
+        <p>
+            Working during these hours allows
+            recruiters to align with the U.S.
+            hiring schedule and maximize
+            application opportunities.
+        </p>
+
+    </div>
+
+
+    <div class="content-card">
+
+        <h2>
+            Daily Responsibilities
+        </h2>
+
+        <p>
+            Every recruiter is responsible for:
+        </p>
+
+        <ul>
+
+            <li>
+                Applying to assigned job openings.
+            </li>
+
+            <li>
+                Following the application workflow
+                exactly.
+            </li>
+
+            <li>
+                Tailoring resumes for all job
+                applications.
+            </li>
+
+            <li>
+                Maintaining application quality.
+            </li>
+
+            <li>
+                Updating tracking sheets accurately.
+            </li>
+
+            <li>
+                Ignore jobs that are redirecting
+                to LinkedIn.
+            </li>
+
+            <li>
+                Refer to the FAQs & Clarifications
+                Document.
+            </li>
+
+            <li>
+                Protecting client information.
+            </li>
+
+            <li>
+                Do not apply to irrelevant jobs.
+            </li>
+
+        </ul>
+
+
+        <div class="highlight">
+
+            Each recruiter is assigned to specific
+            clients and must use only the
+            credentials and documents provided
+            for those clients.
+
+        </div>
+
+    </div>
+
+
+    <div class="content-card">
+
+        <h2>
+            Professional Expectations
+        </h2>
+
+        <ul>
+
+            <li>Professionalism</li>
+
+            <li>Integrity</li>
+
+            <li>Accuracy</li>
+
+            <li>Accountability</li>
+
+            <li>Consistency</li>
+
+            <li>Confidentiality</li>
+
+            <li>Positive attitude</li>
+
+            <li>Continuous learning</li>
+
+        </ul>
+
+
+        <div class="success-box">
+
+            You are representing both the client
+            and Ignova Technologies. Every action
+            you take reflects on the organization.
+
+        </div>
+
+
+        <p>
+            Always prioritize quality over speed,
+            and never submit applications without
+            carefully reviewing the job requirements
+            and application details.
+        </p>
+
+    </div>
+
+
+</section>
+
+
+<!-- =========================================
+     SECTION 03
+========================================= -->
+
+<section
+    id="client-profile"
+    class="documentation-section">
+
+
+    <div class="page-title">
+
+        <h1>
+            Client Profile Access &
+            Performance Monitoring
+        </h1>
+
+        <p>
+            Client account responsibilities,
+            tracking and daily reporting
+        </p>
+
+    </div>
+
+
+    <div class="content-card">
+
+        <h2>
+            Important Guidelines
+        </h2>
+
+        <p>
+            As a recruiter, you will have access
+            to client profiles for job applications.
+        </p>
+
+        <ul>
+
+            <li>
+                We have access to and continuously
+                monitor every client profile
+                assigned to you.
+            </li>
+
+            <li>
+                Your overall performance will be
+                evaluated regularly.
+            </li>
+
+        </ul>
+
+
+        <h3>
+            We Monitor:
+        </h3>
+
+        <ul>
+
+            <li>
+                Work Progress Tracker and other
+                tracking sheets.
+            </li>
+
+            <li>
+                Gmail inboxes used for job
+                applications.
+            </li>
+
+            <li>
+                Daily application counts.
+            </li>
+
+            <li>
+                Every activity performed on the
+                client's profile.
+            </li>
+
+        </ul>
+
+
+        <div class="warning-box">
+
+            Submit only genuine application counts.
+            Never manipulate or falsify data.
+
+        </div>
+
+
+        <ul>
+
+            <li>
+                Apply only to relevant job postings
+                that match the client's profile.
+            </li>
+
+            <li>
+                Avoid any mistakes while working
+                on client accounts.
+            </li>
+
+        </ul>
+
+    </div>
+
+
+    <div class="content-card">
+
+        <h2>
+            Data Entry Standards
+        </h2>
+
+        <p>
+            While updating the tracker:
+        </p>
+
+        <ul class="check-list">
+
+            <li>Use the correct format.</li>
+
+            <li>Avoid spelling mistakes.</li>
+
+            <li>Enter complete information.</li>
+
+            <li>
+                Never delete existing records
+                without approval.
+            </li>
+
+            <li>
+                Do not modify another recruiter's
+                entries.
+            </li>
+
+            <li>
+                Accuracy is more important than
+                speed.
+            </li>
+
+        </ul>
+
+    </div>
+
+
+    <div class="content-card">
+
+        <h2>
+            Daily Reporting
+        </h2>
+
+        <p>
+            At the end of every shift, confirm that:
+        </p>
+
+        <ul class="check-list">
+
+            <li>
+                All applications are recorded.
+            </li>
+
+            <li>
+                Tracker is updated.
+            </li>
+
+            <li>
+                Daily target is completed.
+            </li>
+
+            <li>
+                Pending issues are reported.
+            </li>
+
+            <li>
+                New questions are documented.
+            </li>
+
+        </ul>
+
+
+        <div class="highlight">
+
+            Never leave your shift without
+            updating your work.
+
+        </div>
+
+    </div>
+
+
+    <div class="content-card">
+
+        <h2>
+            Common Mistakes to Avoid
+        </h2>
+
+        <ul class="dont-list">
+
+            <li>
+                Applying without reading the job
+                description
+            </li>
+
+            <li>
+                Uploading the wrong resume
+            </li>
+
+            <li>
+                Selecting incorrect work
+                authorization answers
+            </li>
+
+            <li>
+                Forgetting to update the tracking
+                sheet
+            </li>
+
+            <li>
+                Applying to irrelevant positions
+            </li>
+
+            <li>
+                Guessing answers to screening
+                questions
+            </li>
+
+            <li>
+                Ignoring mandatory fields
+            </li>
+
+            <li>
+                Making spelling or formatting
+                mistakes
+            </li>
+
+            <li>
+                Skipping the final review before
+                submission
+            </li>
+
+        </ul>
+
+
+        <p>
+            Avoiding these mistakes significantly
+            improves interview conversion rates.
+        </p>
+
+    </div>
+
+
+</section>
+
+
+<!-- =========================================
+     SECTION 04
+========================================= -->
+
+<section
+    id="job-rules"
+    class="documentation-section">
+
+
+    <div class="page-title">
+
+        <h1>
+            Job Rules, Regulations,
+            Performance Standards &
+            Compensation
+        </h1>
+
+        <p>
+            Operational requirements and
+            professional standards
+        </p>
+
+    </div>
+
+
+    <div class="content-card">
+
+        <h2>
+            Client Assignment & Application Targets
+        </h2>
+
+        <p>
+            After successfully completing the
+            training and testing phases, you will
+            be assigned a new client.
+        </p>
+
+        <p>
+            Once a client is assigned, your actual
+            work starts.
+        </p>
+
+        <ul>
+
+            <li>
+                Stay on the call with the client
+                while logging into the system.
+            </li>
+
+            <li>
+                Ask the client to fill out the
+                personal details sheet.
+            </li>
+
+            <li>
+                If one client is assigned to you,
+                submit 50+ job applications for
+                that client in one day.
+            </li>
+
+            <li>
+                If two or more clients are assigned
+                to you, submit 30+ job applications
+                for each client separately in one day.
+            </li>
+
+        </ul>
+
+    </div>
+
+
+    <div class="content-card">
+
+        <h2>
+            Client Communication
+        </h2>
+
+        <ul>
+
+            <li>
+                An operational WhatsApp group will
+                be created with the client, you,
+                and the Team Lead.
+            </li>
+
+            <li>
+                Keep the WhatsApp group updated with
+                all interview schedules, assignments,
+                and important updates.
+            </li>
+
+            <li>
+                Monitor the client's Gmail regularly
+                for interviews, assessments, and
+                other updates.
+            </li>
+
+            <li>
+                Follow up with the client regularly
+                and try to know the progress.
+            </li>
+
+            <li>
+                If you receive interview invitations,
+                assessment links, or other important
+                updates, take screenshots.
+            </li>
+
+            <li>
+                Share screenshots of interviews,
+                assessments, and related updates in
+                the WhatsApp group.
+            </li>
+
+            <li>
+                Keep the Team Lead informed about
+                all client progress and updates
+                through the WhatsApp group.
+            </li>
+
+        </ul>
+
+    </div>
+
+
+    <div class="content-card">
+
+        <h2>
+            Rules and Regulations
+        </h2>
+
+        <p>
+            Every trainee is expected to follow
+            the company's policies and maintain a
+            professional work ethic throughout the
+            internship.
+        </p>
+
+        <div class="warning-box">
+
+            Failure to follow these guidelines may
+            affect your performance evaluation and
+            continuation in the program.
+
+        </div>
+
+
+        <h3>
+            Confidentiality
+        </h3>
+
+        <p>
+            All client information provided during
+            the internship is strictly confidential.
+        </p>
+
+
+        <h3>
+            This includes:
+        </h3>
+
+        <ul>
+
+            <li>Resumes</li>
+
+            <li>Email addresses</li>
+
+            <li>Phone numbers</li>
+
+            <li>Login credentials</li>
+
+            <li>Job portal accounts</li>
+
+            <li>Company information</li>
+
+            <li>Internal documents</li>
+
+            <li>Training materials</li>
+
+        </ul>
+
+
+        <div class="warning-box">
+
+            <strong>
+                Do Not:
+            </strong>
+
+            Share client information with anyone.
+
+        </div>
+
+    </div>
+
+
+    <div class="content-card">
+
+        <h2>
+            Professional Conduct
+        </h2>
+
+        <p>
+            Maintain professional behavior at all
+            times.
+        </p>
+
+        <h3>
+            Every recruiter should:
+        </h3>
+
+        <ul>
+
+            <li>
+                Be respectful to teammates.
+            </li>
+
+            <li>
+                Follow instructions from trainers.
+            </li>
+
+            <li>
+                Communicate professionally.
+            </li>
+
+            <li>
+                Ask questions when clarification
+                is needed.
+            </li>
+
+            <li>
+                Take ownership of assigned tasks.
+            </li>
+
+            <li>
+                Complete work honestly.
+            </li>
+
+        </ul>
+
+        <p>
+            Professionalism builds trust with both
+            clients and the organization.
+        </p>
+
+    </div>
+
+
+    <div class="content-card">
+
+        <h2>
+            Quality Standards
+        </h2>
+
+        <div class="success-box">
+
+            Our primary objective is quality,
+            not simply quantity.
+
+        </div>
+
+        <p>
+            Each application must be submitted
+            carefully after reviewing:
+        </p>
+
+        <ul>
+
+            <li>Job description</li>
+
+            <li>Required skills</li>
+
+            <li>Experience level</li>
+
+            <li>Work authorization questions</li>
+
+            <li>Location requirements</li>
+
+            <li>Resume version</li>
+
+            <li>Application responses</li>
+
+        </ul>
+
+
+        <p>
+            Never submit applications blindly.
+        </p>
+
+        <p>
+            Incorrect applications reduce interview
+            opportunities for clients and negatively
+            impact the organization's reputation.
+        </p>
+
+    </div>
+
+
+    <div class="content-card">
+
+        <h2>
+            Accuracy Requirements
+        </h2>
+
+        <p>
+            Before clicking Submit, always verify:
+        </p>
+
+        <ul class="check-list">
+
+            <li>
+                Correct resume uploaded
+            </li>
+
+            <li>
+                Correct client profile
+            </li>
+
+            <li>
+                Correct answers to screening
+                questions
+            </li>
+
+            <li>
+                Correct work authorization
+                responses
+            </li>
+
+            <li>
+                Correct contact information
+            </li>
+
+            <li>
+                Required documents attached
+            </li>
+
+            <li>
+                No spelling or formatting mistakes
+            </li>
+
+        </ul>
+
+
+        <div class="warning-box">
+
+            Even a small mistake can result in an
+            application being rejected.
+
+        </div>
+
+    </div>
+
+
+    <div class="content-card">
+
+        <h2>
+            Daily Performance Expectations
+        </h2>
+
+        <ul>
+
+            <li>
+                Meet the assigned daily application
+                target.
+            </li>
+
+            <li>
+                Maintain high application quality.
+            </li>
+
+            <li>
+                Update tracking sheets accurately.
+            </li>
+
+            <li>
+                Complete work within the assigned
+                shift.
+            </li>
+
+            <li>
+                Report completed work on time.
+            </li>
+
+            <li>
+                Inform the trainer if any issue
+                prevents task completion.
+            </li>
+
+            <li>
+                Attend daily meeting.
+            </li>
+
+        </ul>
+
+
+        <div class="highlight">
+
+            Consistency is one of the most important
+            performance metrics.
+
+        </div>
+
+    </div>
+
+
+    <div class="content-card">
+
+        <h2>
+            Training Evaluation
+        </h2>
+
+        <table
+            class="performance-table">
+
+            <tr>
+
+                <th>
+                    Area
+                </th>
+
+                <th>
+                    Evaluation
+                </th>
+
+            </tr>
+
+            <tr>
+
+                <td>
+                    Accuracy
+                </td>
+
+                <td>
+                    Are applications submitted
+                    correctly?
+                </td>
+
+            </tr>
+
+            <tr>
+
+                <td>
+                    Productivity
+                </td>
+
+                <td>
+                    Can you consistently meet
+                    the required targets?
+                </td>
+
+            </tr>
+
+            <tr>
+
+                <td>
+                    Understanding
+                </td>
+
+                <td>
+                    Do you understand the complete
+                    application workflow?
+                </td>
+
+            </tr>
+
+            <tr>
+
+                <td>
+                    Responsibility
+                </td>
+
+                <td>
+                    Do you follow instructions
+                    without repeated reminders?
+                </td>
+
+            </tr>
+
+            <tr>
+
+                <td>
+                    Learning Ability
+                </td>
+
+                <td>
+                    Can you identify mistakes and
+                    improve over time?
+                </td>
+
+            </tr>
+
+        </table>
+
+
+        <div class="warning-box">
+
+            Only trainees who demonstrate
+            satisfactory performance during the
+            testing phase will move to the official
+            internship.
+
+        </div>
+
+    </div>
+
+
+</section>
+
+
+<!-- =========================================
+     SECTION 05
+========================================= -->
+
+<section
+    id="compensation"
+    class="documentation-section">
+
+
+    <div class="page-title">
+
+        <h1>
+            Compensation Structure
+        </h1>
+
+        <p>
+            Performance-based compensation,
+            attendance and growth opportunities
+        </p>
+
+    </div>
+
+
+    <div class="content-card">
+
+        <h2>
+            Compensation Structure
+        </h2>
+
+        <p>
+            Ignova Technologies follows a
+            performance-based compensation model.
+        </p>
+
+        <p>
+            Your earnings are directly linked to
+            the success of the clients assigned
+            to you.
+        </p>
+
+
+        <div class="stage-grid">
+
+
+            <div class="stage-card">
+
+                <h3>
+                    ₹5
+                </h3>
+
+                <p>
+                    For every job application
+                    you submit.
+                </p>
+
+            </div>
+
+
+            <div class="stage-card">
+
+                <h3>
+                    ₹100
+                </h3>
+
+                <p>
+                    Additional bonus for attending
+                    the daily meeting on time and
+                    sharing your screen during your
+                    turn.
+                </p>
+
+            </div>
+
+
+            <div class="stage-card">
+
+                <h3>
+                    Interview Bonus
+                </h3>
+
+                <p>
+                    Bonus for interviews secured
+                    by assigned clients as specified
+                    in the compensation policy.
+                </p>
+
+            </div>
+
+
+            <div class="stage-card">
+
+                <h3>
+                    ₹10,000
+                </h3>
+
+                <p>
+                    Job placement bonus when an
+                    assigned client successfully
+                    receives a job offer.
+                </p>
+
+            </div>
+
+
+            <div class="stage-card">
+
+                <h3>
+                    ₹1,000
+                </h3>
+
+                <p>
+                    Referral bonus when a referred
+                    recruiter completes one month
+                    and continues with the organization.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+    <div class="content-card">
+
+        <h2>
+            Application Based Payment
+        </h2>
+
+        <ul>
+
+            <li>
+                ₹5 for every job application
+                submitted.
+            </li>
+
+            <li>
+                Additional ₹100 meeting bonus
+                when the stated conditions are met.
+            </li>
+
+            <li>
+                Interview bonus according to the
+                applicable compensation policy.
+            </li>
+
+        </ul>
+
+    </div>
+
+
+    <div class="content-card">
+
+        <h2>
+            Job Placement Bonus
+        </h2>
+
+        <div class="success-box">
+
+            <strong>
+                ₹10,000 Bonus
+            </strong>
+
+            <br><br>
+
+            This incentive rewards recruiters for
+            consistently submitting high-quality
+            applications that lead to successful
+            outcomes.
+
+        </div>
+
+    </div>
+
+
+    <div class="content-card">
+
+        <h2>
+            Referral Bonus
+        </h2>
+
+        <p>
+            If you refer a new recruiter who:
+        </p>
+
+        <ul>
+
+            <li>
+                Completes one month of work
+            </li>
+
+            <li>
+                Continues with the organization
+            </li>
+
+        </ul>
+
+        <p>
+            You will receive:
+        </p>
+
+        <div class="highlight">
+
+            ₹1,000 Referral Bonus
+
+        </div>
+
+    </div>
+
+
+    <div class="content-card">
+
+        <h2>
+            Attendance Policy
+        </h2>
+
+        <p>
+            Regular attendance is essential because
+            the U.S. job market changes rapidly
+            throughout the day.
+        </p>
+
+        <p>
+            Recruiters are expected to work
+            consistently and meet daily targets.
+        </p>
+
+    </div>
+
+
+    <div class="content-card">
+
+        <h2>
+            Leave Guidelines
+        </h2>
+
+        <ul>
+
+            <li>
+                Limit leave to 1–2 days per month
+                whenever possible.
+            </li>
+
+            <li>
+                Inform your reporting manager in
+                advance if you need leave.
+            </li>
+
+            <li>
+                University examinations and genuine
+                emergencies will be considered with
+                prior communication.
+            </li>
+
+            <li>
+                Unplanned or repeated absences
+                without notice may affect your
+                evaluation.
+            </li>
+
+        </ul>
+
+    </div>
+
+
+    <div class="content-card">
+
+        <h2>
+            Communication Guidelines
+        </h2>
+
+        <p>
+            Communication should always be:
+        </p>
+
+        <ul>
+
+            <li>Clear</li>
+
+            <li>Respectful</li>
+
+            <li>Professional</li>
+
+            <li>Timely</li>
+
+        </ul>
+
+
+        <h3>
+            When Reporting Issues
+        </h3>
+
+        <ul>
+
+            <li>
+                Explain the problem clearly.
+            </li>
+
+            <li>
+                Provide screenshots if necessary.
+            </li>
+
+            <li>
+                Avoid unnecessary messages.
+            </li>
+
+            <li>
+                Ask specific questions instead of
+                general ones.
+            </li>
+
+        </ul>
+
+
+        <div class="warning-box">
+
+            If you encounter a new application
+            question that is not covered in the
+            training materials, do not guess the
+            answer. Record it as instructed and
+            seek guidance before proceeding.
+
+        </div>
+
+    </div>
+
+
+    <div class="content-card">
+
+        <h2>
+            Accountability
+        </h2>
+
+        <p>
+            Every recruiter is responsible for:
+        </p>
+
+        <ul>
+
+            <li>
+                Applications submitted
+            </li>
+
+            <li>
+                Data entered into tracking sheets
+            </li>
+
+            <li>
+                Resume versions used
+            </li>
+
+            <li>
+                Answers selected during applications
+            </li>
+
+            <li>
+                Reporting completed work
+            </li>
+
+        </ul>
+
+
+        <p>
+            All work is tracked transparently to
+            ensure quality and accountability across
+            the team.
+        </p>
+
+    </div>
+
+
+    <div class="content-card">
+
+        <h2>
+            Growth Opportunities
+        </h2>
+
+        <p>
+            Outstanding performers may become
+            eligible to join the Technical Team
+            after demonstrating consistent
+            performance as a recruiter.
+        </p>
+
+
+        <h3>
+            Technical Team Projects
+        </h3>
+
+        <ul>
+
+            <li>
+                Browser extension development
+            </li>
+
+            <li>
+                Recruitment automation
+            </li>
+
+            <li>
+                Resume tailoring tools
+            </li>
+
+            <li>
+                AI-powered workflow improvements
+            </li>
+
+            <li>
+                API integrations
+            </li>
+
+        </ul>
+
+
+        <p>
+            Selection is based primarily on
+            problem-solving ability, commitment,
+            and performance—not academic rankings
+            alone.
+        </p>
+
+
+        <p>
+            Team members who transition to
+            technical roles are expected to commit
+            to the role for at least six months.
+        </p>
+
+    </div>
+
+
+    <div class="content-card">
+
+        <h2>
+            Success Tips
+        </h2>
+
+        <ul class="check-list">
+
+            <li>
+                Read every instruction carefully.
+            </li>
+
+            <li>
+                Understand the job before applying.
+            </li>
+
+            <li>
+                Focus on quality over speed.
+            </li>
+
+            <li>
+                Stay organized.
+            </li>
+
+            <li>
+                Keep accurate records.
+            </li>
+
+            <li>
+                Ask questions when genuinely needed.
+            </li>
+
+            <li>
+                Learn from mistakes.
+            </li>
+
+            <li>
+                Remain consistent every day.
+            </li>
+
+        </ul>
+
+
+        <div class="success-box">
+
+            Your work directly influences a
+            client's career. Every application
+            should be submitted with the same level
+            of care and professionalism you would
+            expect for your own job search.
+
+        </div>
+
+    </div>
+
+
+</section>
+
+
+<!-- =========================================
+     SECTION 06
+========================================= -->
+
+<section
+    id="sop"
+    class="documentation-section">
+
+
+    <div class="page-title">
+
+        <h1>
+            Standard Operating Procedure (SOP)
+        </h1>
+
+        <p>
+            Daily Job Application Workflow &
+            Resume Tailoring Standards
+        </p>
+
+    </div>
+
+
+    <div class="content-card">
+
+        <h2>
+            Daily Job Application Workflow
+        </h2>
+
+
+        <h3>
+            Purpose
+        </h3>
+
+        <p>
+            This Standard Operating Procedure
+            (SOP) explains the complete workflow
+            every recruiter must follow while
+            submitting job applications.
+        </p>
+
+
+        <p>
+            Following this workflow ensures:
+        </p>
+
+        <ul class="check-list">
+
+            <li>
+                High-quality applications
+            </li>
+
+            <li>
+                Consistent performance
+            </li>
+
+            <li>
+                Better interview conversion
+            </li>
+
+            <li>
+                Accurate reporting
+            </li>
+
+            <li>
+                Professional client service
+            </li>
+
+        </ul>
+
+
+        <div class="warning-box">
+
+            Every recruiter is expected to follow
+            these steps exactly as instructed.
+
+        </div>
+
+    </div>
+
+
+    <div class="content-card">
+
+        <h2>
+            Before You Start Your Shift
+        </h2>
+
+        <p>
+            Before beginning your work, ensure the
+            following:
+        </p>
+
+        <ul class="check-list">
+
+            <li>
+                Stable internet connection
+            </li>
+
+            <li>
+                Assigned client information is
+                available
+            </li>
+
+            <li>
+                Correct resume is downloaded
+            </li>
+
+            <li>
+                Required Chrome profile is opened
+            </li>
+
+            <li>
+                Job portals are logged in
+            </li>
+
+            <li>
+                Work Progress Tracker is open
+            </li>
+
+            <li>
+                Training documents are accessible
+            </li>
+
+            <li>
+                Resume tailoring tools are ready
+            </li>
+
+        </ul>
+
+
+        <p>
+            Starting your shift with everything
+            prepared helps avoid delays and mistakes.
+        </p>
+
+    </div>
+
+
+    <div class="content-card">
+
+        <h2>
+            Resume Tailoring & Job Application
+            Standards
+        </h2>
+
+
+        <h3>
+            Introduction
+        </h3>
+
+        <p>
+            Resume tailoring is one of the most
+            important responsibilities of a recruiter.
+        </p>
+
+        <p>
+            A well-tailored resume increases the
+            chances of passing the Applicant Tracking
+            System (ATS) and improves the likelihood
+            of securing interviews.
+        </p>
+
+
+        <div class="highlight">
+
+            The goal of resume tailoring is not to
+            change the candidate's background or
+            create false information.
+
+        </div>
+
+
+        <p>
+            Instead, it is to present the candidate's
+            existing skills and experience in the most
+            relevant way for the job being applied to.
+        </p>
+
+
+        <h3>
+            What is Resume Tailoring?
+        </h3>
+
+        <p>
+            Resume tailoring is the process of
+            modifying a client's resume so that it
+            aligns with the requirements of a specific
+            job description while keeping all
+            information truthful and consistent.
+        </p>
+
+
+        <h3>
+            A Tailored Resume Should:
+        </h3>
+
+        <ul class="check-list">
+
+            <li>
+                Highlight the most relevant skills.
+            </li>
+
+            <li>
+                Emphasize matching experience.
+            </li>
+
+            <li>
+                Include keywords from the job
+                description where appropriate.
+            </li>
+
+            <li>
+                Maintain professional formatting.
+            </li>
+
+            <li>
+                Remain factually accurate.
+            </li>
+
+        </ul>
+
+    </div>
+
+
+    <div class="content-card">
+
+        <h2>
+            Objectives of Resume Tailoring
+        </h2>
+
+        <ul>
+
+            <li>
+                Increase ATS compatibility.
+            </li>
+
+            <li>
+                Improve recruiter visibility.
+            </li>
+
+            <li>
+                Match client experience with job
+                requirements.
+            </li>
+
+            <li>
+                Improve interview conversion rates.
+            </li>
+
+            <li>
+                Present the client's strongest
+                qualifications.
+            </li>
+
+        </ul>
+
+    </div>
+
+
+    <div class="content-card">
+
+        <h2>
+            Maintaining Application Quality
+        </h2>
+
+
+        <h3>
+            High-quality applications are:
+        </h3>
+
+        <ul class="check-list">
+
+            <li>Relevant</li>
+
+            <li>Accurate</li>
+
+            <li>Complete</li>
+
+            <li>Well-reviewed</li>
+
+            <li>Professionally submitted</li>
+
+        </ul>
+
+
+        <h3>
+            Low-quality applications are:
+        </h3>
+
+        <ul class="dont-list">
+
+            <li>Random</li>
+
+            <li>Incomplete</li>
+
+            <li>Incorrect</li>
+
+            <li>Careless</li>
+
+            <li>
+                Submitted without verification
+            </li>
+
+        </ul>
+
+
+        <div class="success-box">
+
+            Our objective is to maximize interview
+            opportunities—not simply increase
+            application numbers.
+
+        </div>
+
+    </div>
+
+
+    <div class="content-card">
+
+        <h2>
+            Escalation Procedure
+        </h2>
+
+        <p>
+            Immediately inform your trainer if you
+            encounter:
+        </p>
+
+        <ul class="dont-list">
+
+            <li>
+                Unknown application questions
+            </li>
+
+            <li>
+                Resume inconsistencies
+            </li>
+
+            <li>
+                Missing client information
+            </li>
+
+            <li>
+                Website errors
+            </li>
+
+            <li>
+                Portal login issues
+            </li>
+
+            <li>
+                Technical problems
+            </li>
+
+            <li>
+                Duplicate applications
+            </li>
+
+            <li>
+                Unclear job requirements
+            </li>
+
+        </ul>
+
+
+        <div class="warning-box">
+
+            Do not proceed if you are uncertain.
+            Seeking clarification is always better
+            than submitting an incorrect application.
+
+        </div>
+
+    </div>
+
+
+    <div class="content-card">
+
+        <h2>
+            Daily Self-Assessment
+        </h2>
+
+        <p>
+            At the end of every work session,
+            ask yourself:
+        </p>
+
+        <ul class="check-list">
+
+            <li>
+                Did I maintain application quality?
+            </li>
+
+            <li>
+                Did I follow the SOP?
+            </li>
+
+            <li>
+                Did I tailor resumes correctly?
+            </li>
+
+            <li>
+                Did I avoid unnecessary mistakes?
+            </li>
+
+            <li>
+                Did I update the tracker?
+            </li>
+
+            <li>
+                Did I report all issues?
+            </li>
+
+            <li>
+                Did I represent the client
+                professionally?
+            </li>
+
+        </ul>
+
+
+        <p>
+            Continuous improvement is an important
+            part of becoming a successful recruiter.
+        </p>
+
+    </div>
+
+
+</section>
+
+
+<!-- =========================================
+     SECTION 07
+========================================= -->
+
+<section
+    id="code-conduct"
+    class="documentation-section">
+
+
+    <div class="page-title">
+
+        <h1>
+            Recruiter Code of Conduct,
+            FAQ & Final Checklist
+        </h1>
+
+        <p>
+            Professional conduct, FAQs and
+            final reminders
+        </p>
+
+    </div>
+
+
+    <div class="content-card">
+
+        <h2>
+            Recruiter Code of Conduct
+        </h2>
+
+        <p>
+            Every recruiter represents both the
+            client and Ignova Technologies.
+        </p>
+
+        <p>
+            Your professionalism, accuracy, and
+            responsibility directly impact the
+            client's success and the organization's
+            reputation.
+        </p>
+
+        <h3>
+            Do's
+        </h3>
+
+        <ul class="check-list">
+
+            <li>
+                Read all training materials thoroughly.
+            </li>
+
+            <li>
+                Follow the SOP for every application.
+            </li>
+
+            <li>
+                Tailor resumes when required.
+            </li>
+
+            <li>
+                Stay on the call with the client
+                while logging into the system and
+                ask the client to fill out the
+                personal details sheet.
+            </li>
+
+            <li>
+                Keep accurate records.
+            </li>
+
+            <li>
+                Report issues promptly.
+            </li>
+
+            <li>
+                Protect confidential information.
+            </li>
+
+            <li>
+                Meet your daily targets.
+            </li>
+
+            <li>
+                Maintain a positive attitude.
+            </li>
+
+            <li>
+                Ask questions whenever necessary.
+            </li>
+
+            <li>
+                Continuously improve your skills.
+            </li>
+
+            <li>
+                Apply to at least 50 jobs every day
+                from Monday to Friday.
+            </li>
+
+            <li>
+                Check all inbox mails daily for
+                interviews and tests and post in
+                the WhatsApp group.
+            </li>
+
+            <li>
+                Always follow the organization's
+                stated work-authorization guidance.
+            </li>
+
+            <li>
+                If the AI tool does not work,
+                tell the trainer and use the
+                Master Resume as instructed.
+            </li>
+
+            <li>
+                Fill out the Work Progress Tracker
+                daily and Assessment Tracker.
+            </li>
+
+            <li>
+                Must and should intimate before
+                taking a leave.
+            </li>
+
+            <li>
+                Do not apply for roles outside the
+                permitted role guidelines.
+            </li>
+
+            <li>
+                Skip LinkedIn applications when the
+                application redirects to LinkedIn.
+            </li>
+
+        </ul>
+
+
+        <h3>
+            Don'ts
+        </h3>
+
+        <ul class="dont-list">
+
+            <li>
+                Do not guess answers to application
+                questions.
+            </li>
+
+            <li>
+                Do not submit random or irrelevant
+                applications.
+            </li>
+
+            <li>
+                Do not skip mandatory fields.
+            </li>
+
+            <li>
+                Do not alter factual client
+                information.
+            </li>
+
+            <li>
+                Do not ignore trainer feedback.
+            </li>
+
+            <li>
+                Do not delay updating the Work
+                Progress Tracker.
+            </li>
+
+            <li>
+                Do not rush through applications.
+            </li>
+
+            <li>
+                Do not compromise quality to
+                increase application numbers.
+            </li>
+
+        </ul>
+
+    </div>
+
+
+    <div class="content-card">
+
+        <h2>
+            Frequently Asked Questions (FAQ)
+        </h2>
+
+
+        <div class="faq">
+
+            <div class="faq-question">
+                Q1. What should I do if I don't
+                understand an application question?
+            </div>
+
+            <p>
+                Pause the application, record the
+                question, and contact your trainer.
+                Never guess the answer.
+            </p>
+
+        </div>
+
+
+        <div class="faq">
+
+            <div class="faq-question">
+                Q2. Can I apply without reading
+                the job description?
+            </div>
+
+            <p>
+                No. Every job description must be
+                reviewed before submitting an
+                application.
+            </p>
+
+        </div>
+
+
+        <div class="faq">
+
+            <div class="faq-question">
+                Q3. What if I accidentally upload
+                the wrong resume?
+            </div>
+
+            <p>
+                Correct the mistake immediately
+                if possible and notify your trainer
+                if the application has already been
+                submitted.
+            </p>
+
+        </div>
+
+
+        <div class="faq">
+
+            <div class="faq-question">
+                Q4. What if I cannot meet my
+                daily target?
+            </div>
+
+            <p>
+                Inform your reporting manager as
+                soon as possible and explain the
+                reason.
+            </p>
+
+        </div>
+
+
+        <div class="faq">
+
+            <div class="faq-question">
+                Q5. Can I modify information in
+                the client's resume?
+            </div>
+
+            <p>
+                Only as part of the approved resume
+                tailoring process, and only to improve
+                relevance while keeping all information
+                truthful.
+            </p>
+
+        </div>
+
+
+        <div class="faq">
+
+            <div class="faq-question">
+                Q6. Can I share training materials
+                with others?
+            </div>
+
+            <p>
+                Training materials are for authorized
+                participants only. Share them only
+                with permission from the organization.
+            </p>
+
+        </div>
+
+
+        <div class="faq">
+
+            <div class="faq-question">
+                Q7. Who should I contact if I
+                encounter technical issues?
+            </div>
+
+            <p>
+                Report technical issues to your
+                trainer or designated support contact
+                immediately.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="content-card">
+
+        <h2>
+            Weekly Self-Review
+        </h2>
+
+        <p>
+            At the end of each week, reflect on:
+        </p>
+
+        <ul class="check-list">
+
+            <li>
+                Did I consistently meet my targets?
+            </li>
+
+            <li>
+                Did I maintain application quality?
+            </li>
+
+            <li>
+                What mistakes did I make?
+            </li>
+
+            <li>
+                What did I learn this week?
+            </li>
+
+            <li>
+                What can I improve next week?
+            </li>
+
+            <li>
+                Have I applied trainer feedback
+                effectively?
+            </li>
+
+        </ul>
+
+
+        <p>
+            Regular self-assessment supports
+            continuous growth and professional
+            development.
+        </p>
+
+    </div>
+
+
+    <div class="content-card">
+
+        <h2>
+            If the Portal Shows an Error
+        </h2>
+
+        <h3>
+            Try:
+        </h3>
+
+        <ol>
+
+            <li>
+                Refresh Page
+            </li>
+
+            <li>
+                Re-login
+            </li>
+
+            <li>
+                Check Internet
+            </li>
+
+            <li>
+                Try Again
+            </li>
+
+        </ol>
+
+
+        <h3>
+            If the issue persists:
+        </h3>
+
+        <ol>
+
+            <li>
+                Capture Screenshot
+            </li>
+
+            <li>
+                Report Immediately
+            </li>
+
+            <li>
+                Continue with another task
+                if instructed.
+            </li>
+
+        </ol>
+
+    </div>
+
+
+    <div class="content-card">
+
+        <h2>
+            If Resume Does Not Match Job
+        </h2>
+
+        <div class="warning-box">
+
+            Do NOT apply immediately.
+
+        </div>
+
+
+        <h3>
+            Instead:
+        </h3>
+
+        <ol>
+
+            <li>
+                Review Job Description.
+            </li>
+
+            <li>
+                Check Resume Version.
+            </li>
+
+            <li>
+                Tailor Resume if permitted.
+            </li>
+
+            <li>
+                If still unsuitable, skip the job
+                and proceed to another relevant
+                opportunity.
+            </li>
+
+        </ol>
+
+
+        <div class="success-box">
+
+            Quality is always more important
+            than quantity.
+
+        </div>
+
+    </div>
+
+
+    <div class="content-card">
+
+        <h2>
+            When to Contact Your Trainer
+        </h2>
+
+        <p>
+            Immediately contact your trainer if:
+        </p>
+
+        <ul class="dont-list">
+
+            <li>
+                Portal login fails.
+            </li>
+
+            <li>
+                Resume is missing.
+            </li>
+
+            <li>
+                Client information is incomplete.
+            </li>
+
+            <li>
+                You encounter a new screening
+                question.
+            </li>
+
+            <li>
+                Technical issues prevent you
+                from working.
+            </li>
+
+            <li>
+                You accidentally submit incorrect
+                information.
+            </li>
+
+        </ul>
+
+
+        <p>
+            Prompt communication helps resolve
+            issues quickly and prevents repeated
+            mistakes.
+        </p>
+
+    </div>
+
+
+    <div class="content-card">
+
+        <h2>
+            Final Reminder
+        </h2>
+
+        <div class="success-box">
+
+            <p>
+                Every application represents a real
+                person's career opportunity.
+            </p>
+
+            <p>
+                Never treat this work as simply
+                completing numbers or meeting targets.
+            </p>
+
+            <p>
+                A carefully reviewed application can
+                lead to an interview, and an interview
+                can lead to a life-changing job offer
+                for the client.
+            </p>
+
+            <p>
+                Your responsibility is to ensure that
+                every application reflects the highest
+                standards of professionalism, accuracy,
+                and care.
+            </p>
+
+        </div>
+
+    </div>
+
+
+</section>
+
+
+</div>
+
+</main>
+
+</div>
+
+
+<!-- =========================================
+     BACK TO TOP
+========================================= -->
+
+<button
+    class="back-top"
+    id="backTop"
+    onclick="scrollToTop()">
+
+    ↑
+
+</button>
+
+
+<!-- =========================================
+     JAVASCRIPT
+========================================= -->
+
+<script>
+
+
+/* =========================================
+   OPEN SECTION
+========================================= */
+
+function openSection(sectionId){
+
+    const sections =
+        document.querySelectorAll(
+            ".documentation-section"
+        );
+
+
+    const links =
+        document.querySelectorAll(
+            ".sidebar-link"
+        );
+
+
+    sections.forEach(
+        section => {
+
+            section.classList.remove(
+                "active"
+            );
+
+        }
+    );
+
+
+    links.forEach(
+        link => {
+
+            link.classList.remove(
+                "active"
+            );
+
+        }
+    );
+
+
+    const selectedSection =
+        document.getElementById(
+            sectionId
+        );
+
+
+    const selectedLink =
+        document.querySelector(
+            `[data-section="${sectionId}"]`
+        );
+
+
+    if(selectedSection){
+
+        selectedSection.classList.add(
+            "active"
+        );
+
+    }
+
+
+    if(selectedLink){
+
+        selectedLink.classList.add(
+            "active"
+        );
+
+    }
+
+
+    window.scrollTo({
+
+        top:0,
+
+        behavior:"smooth"
+
+    });
+
+
+    // Close mobile sidebar
+
+    document
+        .getElementById("sidebar")
+        .classList.remove("open");
+
+}
+
+
+/* =========================================
+   MOBILE SIDEBAR
+========================================= */
+
+function toggleSidebar(){
+
+    document
+        .getElementById("sidebar")
+        .classList.toggle("open");
+
+}
+
+
+/* =========================================
+   BACK TO TOP
+========================================= */
+
+function scrollToTop(){
+
+    window.scrollTo({
+
+        top:0,
+
+        behavior:"smooth"
+
+    });
+
+}
+
+
+/* =========================================
+   SHOW BACK TO TOP
+========================================= */
+
+window.addEventListener(
+    "scroll",
+    function(){
+
+        const button =
+            document.getElementById(
+                "backTop"
+            );
+
+
+        if(window.scrollY > 400){
+
+            button.classList.add(
+                "show"
+            );
+
+        }else{
+
+            button.classList.remove(
+                "show"
+            );
+
+        }
+
+    }
+);
+
+
+/* =========================================
+   CLOSE MOBILE MENU
+========================================= */
+
+document.addEventListener(
+    "click",
+    function(event){
+
+        const sidebar =
+            document.getElementById(
+                "sidebar"
+            );
+
+        const menu =
+            document.getElementById(
+                "mobileMenu"
+            );
+
+
+        if(
+            window.innerWidth <= 900 &&
+            sidebar.classList.contains("open") &&
+            !sidebar.contains(event.target) &&
+            !menu.contains(event.target)
+        ){
+
+            sidebar.classList.remove(
+                "open"
+            );
+
+        }
+
+    }
+);
+
+</script>
+
+
+</body>
+
+</html>
