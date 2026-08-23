@@ -1,8 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
 <title>Ignova Technologies Training Portal</title>
 
 <style>
@@ -18,6 +23,10 @@
     padding:0;
     box-sizing:border-box;
     font-family:'Segoe UI',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
 }
 
 body{
@@ -36,6 +45,10 @@ header{
     text-decoration:none;
     display:inline-block;
     margin-top:10px;
+}
+
+.back-btn:hover{
+    color:#06b6d4;
 }
 
 .hero{
@@ -73,6 +86,7 @@ header{
 
 .switch-btn:hover{
     transform:translateY(-2px);
+    background:#1d4ed8;
 }
 
 .container{
@@ -84,7 +98,8 @@ header{
 
 .grid{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(350px,1fr));
+    grid-template-columns:
+        repeat(auto-fit,minmax(350px,1fr));
     gap:25px;
 }
 
@@ -92,7 +107,8 @@ header{
     background:white;
     padding:25px;
     border-radius:15px;
-    box-shadow:0 5px 15px rgba(0,0,0,.08);
+    box-shadow:
+        0 5px 15px rgba(0,0,0,.08);
     text-align:center;
     transition:.3s;
     min-height:180px;
@@ -150,346 +166,425 @@ header{
 
 @media(max-width:768px){
 
-.grid{
-    grid-template-columns:1fr;
-}
+    .grid{
+        grid-template-columns:1fr;
+    }
 
-.video-wrapper{
-    height:250px;
-}
+    .video-wrapper{
+        height:250px;
+    }
 
-.hero{
-    padding:40px 15px;
-}
+    .hero{
+        padding:40px 15px;
+    }
 
-.hero h1{
-    font-size:30px;
-}
+    .hero h1{
+        font-size:30px;
+    }
 
-.switch-btn{
-    width:90%;
-}
+    .switch-btn{
+        width:90%;
+    }
 
 }
 
 </style>
+
 </head>
 
 <body>
 
+
+<!-- =========================================
+     HEADER
+========================================= -->
+
 <header>
 
-<h2>Ignova Technologies</h2>
+    <h2>Ignova Technologies</h2>
 
-<a href="index.html" class="back-btn">
-← Back to Home
-</a>
+    <a href="index.html"
+       class="back-btn">
+
+        ← Back to Home
+
+    </a>
 
 </header>
 
+
+<!-- =========================================
+     HERO
+========================================= -->
+
 <section class="hero">
 
-<h1>Training Portal</h1>
+    <h1>Training Portal</h1>
 
-<p>
-Recruiter Training, PDFs,
-Important Information and Scenarios
-</p>
+    <p>
+        Recruiter Training, PDFs,
+        Important Information and Scenarios
+    </p>
 
 </section>
 
+
+<!-- =========================================
+     MAIN BUTTONS
+========================================= -->
+
 <div class="button-area">
 
-<button class="switch-btn" onclick="showTraining()">
-📚 Training Materials
-</button>
+    <!-- NEW HANDBOOK PAGE -->
 
-<button class="switch-btn" onclick="showScenarios()">
-🎯 Scenarios
-</button>
+    <button
+        class="switch-btn"
+        onclick="openTrainingMaterials()">
+
+        📚 Training Materials
+
+    </button>
+
+
+    <!-- EXISTING SCENARIOS -->
+
+    <button
+        class="switch-btn"
+        onclick="showScenarios()">
+
+        🎯 Scenarios
+
+    </button>
 
 </div>
+
 
 <div class="container">
 
-<div id="trainingSection">
 
-<div class="grid">
-
-<div class="card">
-
-<h3>Recruiter Basics</h3>
-
-<p>Complete Recruiter Training Program</p>
-
-<button class="video-btn"
-onclick="toggleVideo('recruiterBasicsVideo')">
-📄 Open PDF
-</button>
-
-<div id="recruiterBasicsVideo"
-class="video-wrapper hidden">
-
-<iframe
-src="https://drive.google.com/file/d/1BWnUnN69LC6tD7VDf53JbdKMOQURd59b/preview"
-allow="autoplay; fullscreen"
-allowfullscreen>
-</iframe>
-
-</div>
-
-</div>
-
-<div class="card">
-
-<h3>Recruiter Guide PDF</h3>
-
-<p>Training Documentation</p>
-
-<button class="video-btn"
-onclick="toggleVideo('guidePdfVideo')">
-📄 Open PDF
-</button>
-
-<div id="guidePdfVideo"
-class="video-wrapper hidden">
-
-<iframe
-src="https://drive.google.com/file/d/162kQrTn6rE500WaiYsKBKWFkRLtnw11M/preview"
-allow="autoplay; fullscreen"
-allowfullscreen>
-</iframe>
-
-</div>
-
-</div>
-
-<div class="card">
-
-<h3>Important Information</h3>
-
-<p>Recruitment Process and Guidelines</p>
-
-<button class="video-btn"
-onclick="toggleVideo('importantInfoVideo')">
-📄 Open PDF
-</button>
-
-<div id="importantInfoVideo"
-class="video-wrapper hidden">
-
-<iframe
-src="https://drive.google.com/file/d/10V-KexGN_fjrBbw5yDgOGUTVLdZ3r9uw/preview"
-allow="autoplay; fullscreen"
-allowfullscreen>
-</iframe>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-<!-- Scenario Section -->
+<!-- =========================================
+     SCENARIOS
+========================================= -->
 
 <div id="scenarioSection">
 
-<div class="grid">
 
-<div class="card">
+    <div class="grid">
 
-<h3>Google Sheets</h3>
 
-<p>How to maintain Application Tracking Sheets?</p>
+        <!-- GOOGLE SHEETS -->
 
-<button class="video-btn"
-onclick="toggleVideo('sheetVideo')">
-▶ Watch Video
-</button>
+        <div class="card">
 
-<div id="sheetVideo"
-class="video-wrapper hidden">
+            <h3>
+                Google Sheets
+            </h3>
 
-<iframe
-src="https://drive.google.com/file/d/1E-cQnBoQWUAioMMpHZT9yby0CEIbsrbZ/preview"
-allow="autoplay; fullscreen"
-allowfullscreen>
-</iframe>
+            <p>
+                How to maintain Application
+                Tracking Sheets?
+            </p>
+
+            <button
+                class="video-btn"
+                onclick="toggleVideo('sheetVideo')">
+
+                ▶ Watch Video
+
+            </button>
+
+
+            <div
+                id="sheetVideo"
+                class="video-wrapper hidden">
+
+                <iframe
+                    src="https://drive.google.com/file/d/1E-cQnBoQWUAioMMpHZT9yby0CEIbsrbZ/preview"
+                    allow="autoplay; fullscreen"
+                    allowfullscreen>
+                </iframe>
+
+            </div>
+
+        </div>
+
+
+        <!-- JOBRIGHT -->
+
+        <div class="card">
+
+            <h3>
+                Jobright
+            </h3>
+
+            <p>
+                Jobright Setup & Filters
+            </p>
+
+            <button
+                class="video-btn"
+                onclick="toggleVideo('jobrightVideo')">
+
+                ▶ Watch Video
+
+            </button>
+
+
+            <div
+                id="jobrightVideo"
+                class="video-wrapper hidden">
+
+                <iframe
+                    src="https://drive.google.com/file/d/1PysDqjHCWU81RlAmSZEAvpfpbjQ8_G2q/preview"
+                    allow="autoplay; fullscreen"
+                    allowfullscreen>
+                </iframe>
+
+            </div>
+
+        </div>
+
+
+        <!-- AI RESUME -->
+
+        <div class="card">
+
+            <h3>
+                AI Resume Tailor
+            </h3>
+
+            <p>
+                How to use AI Resume Tailor Tool?
+            </p>
+
+            <button
+                class="video-btn"
+                onclick="toggleVideo('resumeVideo')">
+
+                ▶ Watch Video
+
+            </button>
+
+
+            <div
+                id="resumeVideo"
+                class="video-wrapper hidden">
+
+                <iframe
+                    src="https://drive.google.com/file/d/1AtXN81i0FdMXIdJsvc0ggStTsd0mMcpp/preview"
+                    allow="autoplay; fullscreen"
+                    allowfullscreen>
+                </iframe>
+
+            </div>
+
+        </div>
+
+
+        <!-- APPLICATION PROCESS -->
+
+        <div class="card">
+
+            <h3>
+                Application Process
+            </h3>
+
+            <p>
+                How to do Applications?
+            </p>
+
+            <button
+                class="video-btn"
+                onclick="toggleVideo('applicationProcessVideo')">
+
+                ▶ Watch Video
+
+            </button>
+
+
+            <div
+                id="applicationProcessVideo"
+                class="video-wrapper hidden">
+
+                <iframe
+                    src="https://drive.google.com/file/d/1yhDnVunHfsCwEOLTB4deDm7QwVrxZEsg/preview"
+                    allow="autoplay; fullscreen"
+                    allowfullscreen>
+                </iframe>
+
+            </div>
+
+        </div>
+
+
+        <!-- INCOMPLETE APPLICATION -->
+
+        <div class="card">
+
+            <h3>
+                Application Incomplete
+            </h3>
+
+            <p>
+                Application Filled &
+                Incomplete Application
+            </p>
+
+            <button
+                class="video-btn"
+                onclick="toggleVideo('incompleteVideo')">
+
+                ▶ Watch Video
+
+            </button>
+
+
+            <div
+                id="incompleteVideo"
+                class="video-wrapper hidden">
+
+                <iframe
+                    src="https://drive.google.com/file/d/1tpnXBYBVFu6kBrk9PPMAnudT2NXUiQSm/preview"
+                    allow="autoplay; fullscreen"
+                    allowfullscreen>
+                </iframe>
+
+            </div>
+
+        </div>
+
+
+        <!-- HASHBYHQ -->
+
+        <div class="card">
+
+            <h3>
+                HashbyHQ
+            </h3>
+
+            <p>
+                HashbyHQ Site Application Filling
+            </p>
+
+            <button
+                class="video-btn"
+                onclick="toggleVideo('hashbyhqVideo')">
+
+                ▶ Watch Video
+
+            </button>
+
+
+            <div
+                id="hashbyhqVideo"
+                class="video-wrapper hidden">
+
+                <iframe
+                    src="https://drive.google.com/file/d/1QcqvheWdRSb7W9qhCmQeaMxL_5QjoN4q/preview"
+                    allow="autoplay; fullscreen"
+                    allowfullscreen>
+                </iframe>
+
+            </div>
+
+        </div>
+
+
+    </div>
 
 </div>
 
-</div>
-
-<div class="card">
-
-<h3>Jobright</h3>
-
-<p>Jobright Setup & Filters</p>
-
-<button class="video-btn"
-onclick="toggleVideo('jobrightVideo')">
-▶ Watch Video
-</button>
-
-<div id="jobrightVideo"
-class="video-wrapper hidden">
-
-<iframe
-src="https://drive.google.com/file/d/1PysDqjHCWU81RlAmSZEAvpfpbjQ8_G2q/preview"
-allow="autoplay; fullscreen"
-allowfullscreen>
-</iframe>
-
-</div>
-
-</div>
-
-<div class="card">
-
-<h3>AI Resume Tailor</h3>
-
-<p>How to use AI Resume Tailor Tool?</p>
-
-<button class="video-btn"
-onclick="toggleVideo('resumeVideo')">
-▶ Watch Video
-</button>
-
-<div id="resumeVideo"
-class="video-wrapper hidden">
-
-<iframe
-src="https://drive.google.com/file/d/1AtXN81i0FdMXIdJsvc0ggStTsd0mMcpp/preview"
-allow="autoplay; fullscreen"
-allowfullscreen>
-</iframe>
-
-</div>
-
-</div>
-
-<div class="card">
-
-<h3>Application Process</h3>
-
-<p>How to do Applications?</p>
-
-<button class="video-btn"
-onclick="toggleVideo('applicationProcessVideo')">
-▶ Watch Video
-</button>
-
-<div id="applicationProcessVideo"
-class="video-wrapper hidden">
-
-<iframe
-src="https://drive.google.com/file/d/1yhDnVunHfsCwEOLTB4deDm7QwVrxZEsg/preview"
-allow="autoplay; fullscreen"
-allowfullscreen>
-</iframe>
-
-</div>
-
-</div>
-
-<div class="card">
-
-<h3>Application Incomplete</h3>
-
-<p>Application Filled & Incomplete Application</p>
-
-<button class="video-btn"
-onclick="toggleVideo('incompleteVideo')">
-▶ Watch Video
-</button>
-
-<div id="incompleteVideo"
-class="video-wrapper hidden">
-
-<iframe
-src="https://drive.google.com/file/d/1tpnXBYBVFu6kBrk9PPMAnudT2NXUiQSm/preview"
-allow="autoplay; fullscreen"
-allowfullscreen>
-</iframe>
-
-</div>
-
-</div>
-
-<div class="card">
-
-<h3>HashbyHQ</h3>
-
-<p>HashbyHQ Site Application Filling</p>
-
-<button class="video-btn"
-onclick="toggleVideo('hashbyhqVideo')">
-▶ Watch Video
-</button>
-
-<div id="hashbyhqVideo"
-class="video-wrapper hidden">
-
-<iframe
-src="https://drive.google.com/file/d/1QcqvheWdRSb7W9qhCmQeaMxL_5QjoN4q/preview"
-allow="autoplay; fullscreen"
-allowfullscreen>
-</iframe>
-
-</div>
 
 </div>
 
 
-
-
-
-</div>
-</div>
-
-</div>
+<!-- =========================================
+     JAVASCRIPT
+========================================= -->
 
 <script>
+
+
+/* =========================================
+   OPEN NEW TRAINING MATERIALS PAGE
+========================================= */
+
+function openTrainingMaterials(){
+
+    window.location.href = "handbook.html";
+
+}
+
+
+/* =========================================
+   VIDEO TOGGLE
+========================================= */
 
 function toggleVideo(videoId){
 
     const allVideos =
-    document.querySelectorAll('.video-wrapper');
+        document.querySelectorAll(
+            '.video-wrapper'
+        );
+
 
     allVideos.forEach(video => {
 
         if(video.id !== videoId){
+
             video.classList.add('hidden');
+
         }
 
     });
 
-    document
-        .getElementById(videoId)
-        .classList.toggle('hidden');
+
+    const selectedVideo =
+        document.getElementById(videoId);
+
+
+    if(selectedVideo){
+
+        selectedVideo.classList.toggle(
+            'hidden'
+        );
+
+    }
+
 }
 
-function showTraining(){
 
-    document.getElementById("trainingSection")
-        .style.display = "block";
-
-    document.getElementById("scenarioSection")
-        .style.display = "none";
-}
+/* =========================================
+   SHOW SCENARIOS
+========================================= */
 
 function showScenarios(){
 
-    document.getElementById("trainingSection")
-        .style.display = "none";
+    document.getElementById(
+        "scenarioSection"
+    ).style.display = "block";
 
-    document.getElementById("scenarioSection")
-        .style.display = "block";
 }
+
+
+/* =========================================
+   INITIAL STATE
+========================================= */
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function(){
+
+        document.getElementById(
+            "scenarioSection"
+        ).style.display = "block";
+
+    }
+);
 
 </script>
 
+
 </body>
+
 </html>
