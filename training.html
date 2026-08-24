@@ -12,11 +12,20 @@
 
 <style>
 
+/* =========================================
+   ROOT VARIABLES
+========================================= */
+
 :root{
     --primary:#0f172a;
     --secondary:#2563eb;
     --light:#f8fafc;
 }
+
+
+/* =========================================
+   GLOBAL
+========================================= */
 
 *{
     margin:0;
@@ -31,7 +40,13 @@ html{
 
 body{
     background:var(--light);
+    color:#333;
 }
+
+
+/* =========================================
+   HEADER
+========================================= */
 
 header{
     background:var(--primary);
@@ -40,16 +55,26 @@ header{
     text-align:center;
 }
 
+header h2{
+    margin:0;
+}
+
 .back-btn{
     color:white;
     text-decoration:none;
     display:inline-block;
     margin-top:10px;
+    transition:.3s;
 }
 
 .back-btn:hover{
     color:#06b6d4;
 }
+
+
+/* =========================================
+   HERO
+========================================= */
 
 .hero{
     background:white;
@@ -65,7 +90,13 @@ header{
 
 .hero p{
     color:#666;
+    line-height:1.6;
 }
+
+
+/* =========================================
+   MAIN BUTTONS
+========================================= */
 
 .button-area{
     text-align:center;
@@ -89,90 +120,326 @@ header{
     background:#1d4ed8;
 }
 
+
+/* =========================================
+   MAIN CONTAINER
+========================================= */
+
 .container{
     width:95%;
-    max-width:1400px;
+    max-width:1200px;
     margin:auto;
     padding-bottom:50px;
 }
 
-.grid{
-    display:grid;
-    grid-template-columns:
-        repeat(auto-fit,minmax(350px,1fr));
-    gap:25px;
-}
 
-.card{
-    background:white;
+/* =========================================
+   WORKFLOW INTRO
+========================================= */
+
+.workflow-intro{
+    background:#ffffff;
+
     padding:25px;
-    border-radius:15px;
+
+    margin-bottom:20px;
+
+    border-radius:12px;
+
+    border:1px solid #e5e7eb;
+
     box-shadow:
-        0 5px 15px rgba(0,0,0,.08);
-    text-align:center;
-    transition:.3s;
-    min-height:180px;
+        0 3px 10px rgba(0,0,0,.05);
 }
 
-.card:hover{
-    transform:translateY(-5px);
+.workflow-intro h2{
+    color:#0f172a;
+
+    margin-bottom:8px;
+
+    font-size:24px;
 }
 
-.card h3{
-    color:var(--secondary);
-    margin-bottom:10px;
-}
+.workflow-intro p{
+    color:#64748b;
 
-.card p{
-    margin-bottom:15px;
     line-height:1.6;
+
+    font-size:15px;
 }
 
-.video-btn{
-    background:#2563eb;
-    color:white;
-    border:none;
-    padding:12px 25px;
-    border-radius:8px;
-    cursor:pointer;
-    font-size:16px;
-}
 
-.video-btn:hover{
-    background:#1d4ed8;
-}
+/* =========================================
+   TRAINING LIST
+========================================= */
 
-.hidden{
-    display:none;
-}
-
-.video-wrapper{
-    margin-top:20px;
+.training-list{
     width:100%;
-    height:350px;
-    overflow:hidden;
-    border-radius:10px;
+    margin:0 auto;
 }
 
-.video-wrapper iframe{
+
+/* =========================================
+   HORIZONTAL TRAINING ITEM
+========================================= */
+
+.training-item{
+
+    width:100%;
+    min-height:105px;
+
+    display:flex;
+    align-items:center;
+
+    background:#ffffff;
+
+    border:1px solid #e5e7eb;
+
+    border-radius:12px;
+
+    padding:12px 18px;
+
+    margin-bottom:14px;
+
+    box-shadow:
+        0 3px 10px rgba(0,0,0,.06);
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease;
+}
+
+
+/* =========================================
+   HOVER EFFECT
+========================================= */
+
+.training-item:hover{
+
+    transform:translateY(-2px);
+
+    box-shadow:
+        0 6px 18px rgba(0,0,0,.10);
+}
+
+
+/* =========================================
+   TRAINING IMAGE
+========================================= */
+
+.training-thumbnail{
+
+    width:130px;
+    height:75px;
+
+    flex-shrink:0;
+
+    overflow:hidden;
+
+    border-radius:8px;
+
+    background:#f1f5f9;
+}
+
+.training-thumbnail img{
+
     width:100%;
     height:100%;
+
+    object-fit:cover;
+
+    display:block;
+}
+
+
+/* =========================================
+   TRAINING INFORMATION
+========================================= */
+
+.training-info{
+
+    flex:1;
+
+    padding-left:20px;
+}
+
+.training-info h3{
+
+    margin:0 0 7px 0;
+
+    font-size:18px;
+
+    font-weight:600;
+
+    color:#0f172a;
+}
+
+.training-duration{
+
+    font-size:14px;
+
+    color:#64748b;
+}
+
+
+/* =========================================
+   WATCH BUTTON
+========================================= */
+
+.watch-btn{
+
+    flex-shrink:0;
+
+    background:#2563eb;
+
+    color:white;
+
+    border:none;
+
+    border-radius:7px;
+
+    padding:11px 22px;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:
+        background .2s ease,
+        transform .2s ease;
+}
+
+.watch-btn:hover{
+
+    background:#1d4ed8;
+
+    transform:translateY(-1px);
+}
+
+
+/* =========================================
+   VIDEO MODAL
+========================================= */
+
+.video-modal{
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:100%;
+
+    background:rgba(0,0,0,.75);
+
+    display:none;
+
+    justify-content:center;
+    align-items:center;
+
+    padding:20px;
+
+    z-index:2000;
+}
+
+.video-modal.active{
+
+    display:flex;
+}
+
+
+/* =========================================
+   VIDEO MODAL CONTENT
+========================================= */
+
+.video-modal-content{
+
+    position:relative;
+
+    width:100%;
+
+    max-width:1000px;
+
+    background:#000;
+
+    border-radius:12px;
+
+    overflow:hidden;
+
+    box-shadow:
+        0 10px 40px rgba(0,0,0,.4);
+}
+
+
+/* =========================================
+   VIDEO IFRAME
+========================================= */
+
+.video-modal iframe{
+
+    width:100%;
+
+    height:560px;
+
+    display:block;
+
     border:none;
 }
 
-#scenarioSection{
-    display:none;
+
+/* =========================================
+   CLOSE BUTTON
+========================================= */
+
+.close-video{
+
+    position:absolute;
+
+    top:10px;
+
+    right:10px;
+
+    width:38px;
+
+    height:38px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:rgba(0,0,0,.75);
+
+    color:white;
+
+    font-size:22px;
+
+    cursor:pointer;
+
+    z-index:10;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    transition:.2s;
 }
 
+.close-video:hover{
+
+    background:#ef4444;
+}
+
+
+/* =========================================
+   MOBILE RESPONSIVE
+========================================= */
+
 @media(max-width:768px){
-
-    .grid{
-        grid-template-columns:1fr;
-    }
-
-    .video-wrapper{
-        height:250px;
-    }
 
     .hero{
         padding:40px 15px;
@@ -184,6 +451,77 @@ header{
 
     .switch-btn{
         width:90%;
+        margin:7px auto;
+    }
+
+    .workflow-intro{
+        padding:20px;
+    }
+
+    .workflow-intro h2{
+        font-size:21px;
+    }
+
+    .training-item{
+        min-height:90px;
+        padding:10px;
+    }
+
+    .training-thumbnail{
+        width:100px;
+        height:65px;
+    }
+
+    .training-info{
+        padding-left:12px;
+    }
+
+    .training-info h3{
+        font-size:15px;
+    }
+
+    .training-duration{
+        font-size:13px;
+    }
+
+    .watch-btn{
+        padding:9px 14px;
+        font-size:13px;
+    }
+
+    .video-modal iframe{
+        height:350px;
+    }
+
+}
+
+
+/* =========================================
+   VERY SMALL SCREENS
+========================================= */
+
+@media(max-width:480px){
+
+    .training-thumbnail{
+        width:80px;
+        height:55px;
+    }
+
+    .training-info{
+        padding-left:10px;
+    }
+
+    .training-info h3{
+        font-size:14px;
+    }
+
+    .watch-btn{
+        padding:8px 10px;
+        font-size:12px;
+    }
+
+    .video-modal iframe{
+        height:260px;
     }
 
 }
@@ -191,6 +529,7 @@ header{
 </style>
 
 </head>
+
 
 <body>
 
@@ -213,6 +552,7 @@ header{
 </header>
 
 
+
 <!-- =========================================
      HERO
 ========================================= -->
@@ -229,13 +569,14 @@ header{
 </section>
 
 
+
 <!-- =========================================
      MAIN BUTTONS
 ========================================= -->
 
 <div class="button-area">
 
-    <!-- NEW HANDBOOK PAGE -->
+    <!-- TRAINING MATERIALS -->
 
     <button
         class="switch-btn"
@@ -246,246 +587,303 @@ header{
     </button>
 
 
-    <!-- EXISTING SCENARIOS -->
+    <!-- COMPLETE WORKFLOW -->
 
     <button
         class="switch-btn"
         onclick="showScenarios()">
 
-        🎯 Scenarios
+        ▶ Watch Complete Workflow
 
     </button>
 
 </div>
 
 
+
+<!-- =========================================
+     MAIN CONTAINER
+========================================= -->
+
 <div class="container">
 
 
 <!-- =========================================
-     SCENARIOS
+     COMPLETE WORKFLOW
 ========================================= -->
 
 <div id="scenarioSection">
 
 
-    <div class="grid">
+    <!-- WORKFLOW INTRODUCTION -->
+
+    <div class="workflow-intro">
+
+        <h2>
+            🎥 Complete Recruitment Workflow
+        </h2>
+
+        <p>
+            For a complete understanding of the recruitment workflow,
+            refer to the video recordings below. Please watch the videos
+            carefully and follow the demonstrated process.
+        </p>
+
+    </div>
 
 
-        <!-- GOOGLE SHEETS -->
+    <!-- TRAINING VIDEO LIST -->
 
-        <div class="card">
-
-            <h3>
-                Google Sheets
-            </h3>
-
-            <p>
-                How to maintain Application
-                Tracking Sheets?
-            </p>
-
-            <button
-                class="video-btn"
-                onclick="toggleVideo('sheetVideo')">
-
-                ▶ Watch Video
-
-            </button>
+    <div class="training-list">
 
 
-            <div
-                id="sheetVideo"
-                class="video-wrapper hidden">
+        <!-- =========================================
+             1. GOOGLE SHEETS
+        ========================================= -->
 
-                <iframe
-                    src="https://drive.google.com/file/d/1E-cQnBoQWUAioMMpHZT9yby0CEIbsrbZ/preview"
-                    allow="autoplay; fullscreen"
-                    allowfullscreen>
-                </iframe>
+        <div class="training-item">
+
+            <div class="training-thumbnail">
+
+                <img
+                    src="images/google-sheets.png"
+                    alt="Google Sheets Training">
 
             </div>
+
+
+            <div class="training-info">
+
+                <h3>
+                    Google Sheets
+                </h3>
+
+                <span class="training-duration">
+                    Training Video
+                </span>
+
+            </div>
+
+
+            <button
+                class="watch-btn"
+                onclick="openVideo(
+                'https://drive.google.com/file/d/1E-cQnBoQWUAioMMpHZT9yby0CEIbsrbZ/preview'
+                )">
+
+                ▶ Watch
+
+            </button>
 
         </div>
 
 
-        <!-- JOBRIGHT -->
 
-        <div class="card">
+        <!-- =========================================
+             2. JOBRIGHT
+        ========================================= -->
 
-            <h3>
-                Jobright
-            </h3>
+        <div class="training-item">
 
-            <p>
-                Jobright Setup & Filters
-            </p>
+            <div class="training-thumbnail">
 
-            <button
-                class="video-btn"
-                onclick="toggleVideo('jobrightVideo')">
-
-                ▶ Watch Video
-
-            </button>
-
-
-            <div
-                id="jobrightVideo"
-                class="video-wrapper hidden">
-
-                <iframe
-                    src="https://drive.google.com/file/d/1PysDqjHCWU81RlAmSZEAvpfpbjQ8_G2q/preview"
-                    allow="autoplay; fullscreen"
-                    allowfullscreen>
-                </iframe>
+                <img
+                    src="images/jobright.png"
+                    alt="JobRight Training">
 
             </div>
+
+
+            <div class="training-info">
+
+                <h3>
+                    JobRight Setup & Filters
+                </h3>
+
+                <span class="training-duration">
+                    Training Video
+                </span>
+
+            </div>
+
+
+            <button
+                class="watch-btn"
+                onclick="openVideo(
+                'https://drive.google.com/file/d/1PysDqjHCWU81RlAmSZEAvpfpbjQ8_G2q/preview'
+                )">
+
+                ▶ Watch
+
+            </button>
 
         </div>
 
 
-        <!-- AI RESUME -->
 
-        <div class="card">
+        <!-- =========================================
+             3. AI RESUME TAILOR
+        ========================================= -->
 
-            <h3>
-                AI Resume Tailor
-            </h3>
+        <div class="training-item">
 
-            <p>
-                How to use AI Resume Tailor Tool?
-            </p>
+            <div class="training-thumbnail">
 
-            <button
-                class="video-btn"
-                onclick="toggleVideo('resumeVideo')">
-
-                ▶ Watch Video
-
-            </button>
-
-
-            <div
-                id="resumeVideo"
-                class="video-wrapper hidden">
-
-                <iframe
-                    src="https://drive.google.com/file/d/1AtXN81i0FdMXIdJsvc0ggStTsd0mMcpp/preview"
-                    allow="autoplay; fullscreen"
-                    allowfullscreen>
-                </iframe>
+                <img
+                    src="images/ai-resume-tailor.png"
+                    alt="AI Resume Tailor Training">
 
             </div>
+
+
+            <div class="training-info">
+
+                <h3>
+                    AI Resume Tailor
+                </h3>
+
+                <span class="training-duration">
+                    Training Video
+                </span>
+
+            </div>
+
+
+            <button
+                class="watch-btn"
+                onclick="openVideo(
+                'https://drive.google.com/file/d/1AtXN81i0FdMXIdJsvc0ggStTsd0mMcpp/preview'
+                )">
+
+                ▶ Watch
+
+            </button>
 
         </div>
 
 
-        <!-- APPLICATION PROCESS -->
 
-        <div class="card">
+        <!-- =========================================
+             4. APPLICATION PROCESS
+        ========================================= -->
 
-            <h3>
-                Application Process
-            </h3>
+        <div class="training-item">
 
-            <p>
-                How to do Applications?
-            </p>
+            <div class="training-thumbnail">
 
-            <button
-                class="video-btn"
-                onclick="toggleVideo('applicationProcessVideo')">
-
-                ▶ Watch Video
-
-            </button>
-
-
-            <div
-                id="applicationProcessVideo"
-                class="video-wrapper hidden">
-
-                <iframe
-                    src="https://drive.google.com/file/d/1yhDnVunHfsCwEOLTB4deDm7QwVrxZEsg/preview"
-                    allow="autoplay; fullscreen"
-                    allowfullscreen>
-                </iframe>
+                <img
+                    src="images/application-process.png"
+                    alt="Application Process Training">
 
             </div>
+
+
+            <div class="training-info">
+
+                <h3>
+                    Application Process
+                </h3>
+
+                <span class="training-duration">
+                    Training Video
+                </span>
+
+            </div>
+
+
+            <button
+                class="watch-btn"
+                onclick="openVideo(
+                'https://drive.google.com/file/d/1yhDnVunHfsCwEOLTB4deDm7QwVrxZEsg/preview'
+                )">
+
+                ▶ Watch
+
+            </button>
 
         </div>
 
 
-        <!-- INCOMPLETE APPLICATION -->
 
-        <div class="card">
+        <!-- =========================================
+             5. APPLICATION INCOMPLETE
+        ========================================= -->
 
-            <h3>
-                Application Incomplete
-            </h3>
+        <div class="training-item">
 
-            <p>
-                Application Filled &
-                Incomplete Application
-            </p>
+            <div class="training-thumbnail">
 
-            <button
-                class="video-btn"
-                onclick="toggleVideo('incompleteVideo')">
-
-                ▶ Watch Video
-
-            </button>
-
-
-            <div
-                id="incompleteVideo"
-                class="video-wrapper hidden">
-
-                <iframe
-                    src="https://drive.google.com/file/d/1tpnXBYBVFu6kBrk9PPMAnudT2NXUiQSm/preview"
-                    allow="autoplay; fullscreen"
-                    allowfullscreen>
-                </iframe>
+                <img
+                    src="images/application-incomplete.png"
+                    alt="Application Incomplete Training">
 
             </div>
+
+
+            <div class="training-info">
+
+                <h3>
+                    Application Incomplete
+                </h3>
+
+                <span class="training-duration">
+                    Training Video
+                </span>
+
+            </div>
+
+
+            <button
+                class="watch-btn"
+                onclick="openVideo(
+                'https://drive.google.com/file/d/1tpnXBYBVFu6kBrk9PPMAnudT2NXUiQSm/preview'
+                )">
+
+                ▶ Watch
+
+            </button>
 
         </div>
 
 
-        <!-- HASHBYHQ -->
 
-        <div class="card">
+        <!-- =========================================
+             6. HASHBYHQ
+        ========================================= -->
 
-            <h3>
-                HashbyHQ
-            </h3>
+        <div class="training-item">
 
-            <p>
-                HashbyHQ Site Application Filling
-            </p>
+            <div class="training-thumbnail">
 
-            <button
-                class="video-btn"
-                onclick="toggleVideo('hashbyhqVideo')">
-
-                ▶ Watch Video
-
-            </button>
-
-
-            <div
-                id="hashbyhqVideo"
-                class="video-wrapper hidden">
-
-                <iframe
-                    src="https://drive.google.com/file/d/1QcqvheWdRSb7W9qhCmQeaMxL_5QjoN4q/preview"
-                    allow="autoplay; fullscreen"
-                    allowfullscreen>
-                </iframe>
+                <img
+                    src="images/hashbyhq.png"
+                    alt="HashbyHQ Training">
 
             </div>
+
+
+            <div class="training-info">
+
+                <h3>
+                    HashbyHQ Site Application Filling
+                </h3>
+
+                <span class="training-duration">
+                    Training Video
+                </span>
+
+            </div>
+
+
+            <button
+                class="watch-btn"
+                onclick="openVideo(
+                'https://drive.google.com/file/d/1QcqvheWdRSb7W9qhCmQeaMxL_5QjoN4q/preview'
+                )">
+
+                ▶ Watch
+
+            </button>
 
         </div>
 
@@ -498,6 +896,43 @@ header{
 </div>
 
 
+
+<!-- =========================================
+     VIDEO MODAL
+========================================= -->
+
+<div
+    id="videoModal"
+    class="video-modal"
+    onclick="closeVideoOutside(event)">
+
+
+    <div class="video-modal-content">
+
+
+        <button
+            class="close-video"
+            onclick="closeVideo()">
+
+            ×
+
+        </button>
+
+
+        <iframe
+            id="videoFrame"
+            src=""
+            allow="autoplay; fullscreen"
+            allowfullscreen>
+        </iframe>
+
+
+    </div>
+
+</div>
+
+
+
 <!-- =========================================
      JAVASCRIPT
 ========================================= -->
@@ -506,7 +941,7 @@ header{
 
 
 /* =========================================
-   OPEN NEW TRAINING MATERIALS PAGE
+   OPEN TRAINING MATERIALS PAGE
 ========================================= */
 
 function openTrainingMaterials(){
@@ -516,46 +951,102 @@ function openTrainingMaterials(){
 }
 
 
+
 /* =========================================
-   VIDEO TOGGLE
+   OPEN VIDEO
 ========================================= */
 
-function toggleVideo(videoId){
+function openVideo(videoLink){
 
-    const allVideos =
-        document.querySelectorAll(
-            '.video-wrapper'
-        );
+    const modal =
+        document.getElementById("videoModal");
 
-
-    allVideos.forEach(video => {
-
-        if(video.id !== videoId){
-
-            video.classList.add('hidden');
-
-        }
-
-    });
+    const frame =
+        document.getElementById("videoFrame");
 
 
-    const selectedVideo =
-        document.getElementById(videoId);
+    if(!videoLink){
+
+        alert("Video link is not available.");
+
+        return;
+
+    }
 
 
-    if(selectedVideo){
+    frame.src = videoLink;
 
-        selectedVideo.classList.toggle(
-            'hidden'
-        );
+    modal.classList.add("active");
+
+    document.body.style.overflow = "hidden";
+
+}
+
+
+
+/* =========================================
+   CLOSE VIDEO
+========================================= */
+
+function closeVideo(){
+
+    const modal =
+        document.getElementById("videoModal");
+
+    const frame =
+        document.getElementById("videoFrame");
+
+
+    frame.src = "";
+
+    modal.classList.remove("active");
+
+    document.body.style.overflow = "";
+
+}
+
+
+
+/* =========================================
+   CLOSE WHEN CLICKING OUTSIDE VIDEO
+========================================= */
+
+function closeVideoOutside(event){
+
+    if(
+        event.target ===
+        document.getElementById("videoModal")
+    ){
+
+        closeVideo();
 
     }
 
 }
 
 
+
 /* =========================================
-   SHOW SCENARIOS
+   ESC KEY CLOSE
+========================================= */
+
+document.addEventListener(
+    "keydown",
+    function(event){
+
+        if(event.key === "Escape"){
+
+            closeVideo();
+
+        }
+
+    }
+);
+
+
+
+/* =========================================
+   SHOW COMPLETE WORKFLOW
 ========================================= */
 
 function showScenarios(){
@@ -565,22 +1056,6 @@ function showScenarios(){
     ).style.display = "block";
 
 }
-
-
-/* =========================================
-   INITIAL STATE
-========================================= */
-
-document.addEventListener(
-    "DOMContentLoaded",
-    function(){
-
-        document.getElementById(
-            "scenarioSection"
-        ).style.display = "block";
-
-    }
-);
 
 </script>
 
