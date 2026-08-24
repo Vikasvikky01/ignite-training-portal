@@ -333,7 +333,7 @@ header h2{
     width:100%;
     height:100%;
 
-    background:rgba(0,0,0,.75);
+    background:rgba(0,0,0,.80);
 
     display:none;
 
@@ -342,7 +342,7 @@ header h2{
 
     padding:20px;
 
-    z-index:2000;
+    z-index:9999;
 }
 
 .video-modal.active{
@@ -361,7 +361,7 @@ header h2{
 
     width:100%;
 
-    max-width:1000px;
+    max-width:1050px;
 
     background:#000;
 
@@ -370,7 +370,7 @@ header h2{
     overflow:hidden;
 
     box-shadow:
-        0 10px 40px rgba(0,0,0,.4);
+        0 10px 40px rgba(0,0,0,.5);
 }
 
 
@@ -382,11 +382,13 @@ header h2{
 
     width:100%;
 
-    height:560px;
+    height:590px;
 
     display:block;
 
     border:none;
+
+    background:#000;
 }
 
 
@@ -402,23 +404,23 @@ header h2{
 
     right:10px;
 
-    width:38px;
+    width:40px;
 
-    height:38px;
+    height:40px;
 
     border:none;
 
     border-radius:50%;
 
-    background:rgba(0,0,0,.75);
+    background:rgba(0,0,0,.80);
 
     color:white;
 
-    font-size:22px;
+    font-size:24px;
 
     cursor:pointer;
 
-    z-index:10;
+    z-index:10000;
 
     display:flex;
 
@@ -436,7 +438,7 @@ header h2{
 
 
 /* =========================================
-   MOBILE RESPONSIVE
+   MOBILE
 ========================================= */
 
 @media(max-width:768px){
@@ -487,6 +489,10 @@ header h2{
     .watch-btn{
         padding:9px 14px;
         font-size:13px;
+    }
+
+    .video-modal{
+        padding:10px;
     }
 
     .video-modal iframe{
@@ -591,7 +597,7 @@ header h2{
 
     <button
         class="switch-btn"
-        onclick="showScenarios()">
+        onclick="showCompleteWorkflow()">
 
         ▶ Watch Complete Workflow
 
@@ -632,7 +638,9 @@ header h2{
     </div>
 
 
-    <!-- TRAINING VIDEO LIST -->
+    <!-- =========================================
+         TRAINING VIDEO LIST
+    ========================================= -->
 
     <div class="training-list">
 
@@ -666,9 +674,10 @@ header h2{
 
 
             <button
+                type="button"
                 class="watch-btn"
                 onclick="openVideo(
-                'https://drive.google.com/file/d/1E-cQnBoQWUAioMMpHZT9yby0CEIbsrbZ/preview'
+                    'https://drive.google.com/file/d/1E-cQnBoQWUAioMMpHZT9yby0CEIbsrbZ/preview'
                 )">
 
                 ▶ Watch
@@ -708,9 +717,10 @@ header h2{
 
 
             <button
+                type="button"
                 class="watch-btn"
                 onclick="openVideo(
-                'https://drive.google.com/file/d/1PysDqjHCWU81RlAmSZEAvpfpbjQ8_G2q/preview'
+                    'https://drive.google.com/file/d/1PysDqjHCWU81RlAmSZEAvpfpbjQ8_G2q/preview'
                 )">
 
                 ▶ Watch
@@ -750,9 +760,10 @@ header h2{
 
 
             <button
+                type="button"
                 class="watch-btn"
                 onclick="openVideo(
-                'https://drive.google.com/file/d/1AtXN81i0FdMXIdJsvc0ggStTsd0mMcpp/preview'
+                    'https://drive.google.com/file/d/1AtXN81i0FdMXIdJsvc0ggStTsd0mMcpp/preview'
                 )">
 
                 ▶ Watch
@@ -792,9 +803,10 @@ header h2{
 
 
             <button
+                type="button"
                 class="watch-btn"
                 onclick="openVideo(
-                'https://drive.google.com/file/d/1yhDnVunHfsCwEOLTB4deDm7QwVrxZEsg/preview'
+                    'https://drive.google.com/file/d/1yhDnVunHfsCwEOLTB4deDm7QwVrxZEsg/preview'
                 )">
 
                 ▶ Watch
@@ -834,9 +846,10 @@ header h2{
 
 
             <button
+                type="button"
                 class="watch-btn"
                 onclick="openVideo(
-                'https://drive.google.com/file/d/1tpnXBYBVFu6kBrk9PPMAnudT2NXUiQSm/preview'
+                    'https://drive.google.com/file/d/1tpnXBYBVFu6kBrk9PPMAnudT2NXUiQSm/preview'
                 )">
 
                 ▶ Watch
@@ -876,9 +889,10 @@ header h2{
 
 
             <button
+                type="button"
                 class="watch-btn"
                 onclick="openVideo(
-                'https://drive.google.com/file/d/1QcqvheWdRSb7W9qhCmQeaMxL_5QjoN4q/preview'
+                    'https://drive.google.com/file/d/1QcqvheWdRSb7W9qhCmQeaMxL_5QjoN4q/preview'
                 )">
 
                 ▶ Watch
@@ -892,7 +906,6 @@ header h2{
 
 </div>
 
-
 </div>
 
 
@@ -904,14 +917,21 @@ header h2{
 <div
     id="videoModal"
     class="video-modal"
+    role="dialog"
+    aria-modal="true"
+    aria-label="Training Video"
     onclick="closeVideoOutside(event)">
 
 
     <div class="video-modal-content">
 
 
+        <!-- CLOSE -->
+
         <button
+            type="button"
             class="close-video"
+            aria-label="Close video"
             onclick="closeVideo()">
 
             ×
@@ -919,10 +939,13 @@ header h2{
         </button>
 
 
+        <!-- GOOGLE DRIVE VIDEO -->
+
         <iframe
             id="videoFrame"
-            src=""
-            allow="autoplay; fullscreen"
+            src="about:blank"
+            title="Training Video"
+            allow="autoplay; fullscreen; encrypted-media; picture-in-picture"
             allowfullscreen>
         </iframe>
 
@@ -953,7 +976,27 @@ function openTrainingMaterials(){
 
 
 /* =========================================
-   OPEN VIDEO
+   SHOW COMPLETE WORKFLOW
+========================================= */
+
+function showCompleteWorkflow(){
+
+    const section =
+        document.getElementById("scenarioSection");
+
+    section.style.display = "block";
+
+    section.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+    });
+
+}
+
+
+
+/* =========================================
+   OPEN GOOGLE DRIVE VIDEO
 ========================================= */
 
 function openVideo(videoLink){
@@ -965,7 +1008,10 @@ function openVideo(videoLink){
         document.getElementById("videoFrame");
 
 
-    if(!videoLink){
+    if(
+        !videoLink ||
+        videoLink === "about:blank"
+    ){
 
         alert("Video link is not available.");
 
@@ -974,9 +1020,27 @@ function openVideo(videoLink){
     }
 
 
-    frame.src = videoLink;
+    /*
+       Stop any previous video first.
+    */
+
+    frame.src = "about:blank";
+
+
+    /*
+       Small delay prevents the previous
+       Google Drive video from remaining active.
+    */
+
+    setTimeout(function(){
+
+        frame.src = videoLink;
+
+    }, 100);
+
 
     modal.classList.add("active");
+
 
     document.body.style.overflow = "hidden";
 
@@ -997,9 +1061,16 @@ function closeVideo(){
         document.getElementById("videoFrame");
 
 
-    frame.src = "";
+    /*
+       Clear iframe completely so the
+       Google Drive video stops playing.
+    */
+
+    frame.src = "about:blank";
+
 
     modal.classList.remove("active");
+
 
     document.body.style.overflow = "";
 
@@ -1013,10 +1084,11 @@ function closeVideo(){
 
 function closeVideoOutside(event){
 
-    if(
-        event.target ===
-        document.getElementById("videoModal")
-    ){
+    const modal =
+        document.getElementById("videoModal");
+
+
+    if(event.target === modal){
 
         closeVideo();
 
@@ -1027,7 +1099,7 @@ function closeVideoOutside(event){
 
 
 /* =========================================
-   ESC KEY CLOSE
+   ESC KEY
 ========================================= */
 
 document.addEventListener(
@@ -1046,16 +1118,24 @@ document.addEventListener(
 
 
 /* =========================================
-   SHOW COMPLETE WORKFLOW
+   PAGE LOAD
 ========================================= */
 
-function showScenarios(){
+document.addEventListener(
+    "DOMContentLoaded",
+    function(){
 
-    document.getElementById(
-        "scenarioSection"
-    ).style.display = "block";
+        /*
+           Keep workflow section available
+           but do not automatically open a video.
+        */
 
-}
+        document.getElementById(
+            "scenarioSection"
+        ).style.display = "block";
+
+    }
+);
 
 </script>
 
