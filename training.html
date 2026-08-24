@@ -13,292 +13,179 @@ content="width=device-width, initial-scale=1.0">
 <style>
 
 :root{
-    --primary:#0f172a;
-    --secondary:#2563eb;
-    --light:#f8fafc;
+--primary:#0f172a;
+--secondary:#2563eb;
+--light:#f8fafc;
 }
 
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Segoe UI',sans-serif;
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI',sans-serif;
 }
 
 html{
-    scroll-behavior:smooth;
+scroll-behavior:smooth;
 }
 
 body{
-    background:var(--light);
+background:var(--light);
 }
 
-
-/* =========================================
-   HEADER
-========================================= */
-
 header{
-    background:var(--primary);
-    color:white;
-    padding:20px;
-    text-align:center;
+background:var(--primary);
+color:white;
+padding:20px;
+text-align:center;
 }
 
 .back-btn{
-    color:white;
-    text-decoration:none;
-    display:inline-block;
-    margin-top:10px;
+color:white;
+text-decoration:none;
+display:inline-block;
+margin-top:10px;
 }
 
 .back-btn:hover{
-    color:#06b6d4;
+color:#06b6d4;
 }
 
-
-/* =========================================
-   HERO
-========================================= */
-
 .hero{
-    background:white;
-    text-align:center;
-    padding:60px 20px;
-    box-shadow:0 2px 8px rgba(0,0,0,.05);
+background:white;
+text-align:center;
+padding:60px 20px;
+box-shadow:0 2px 8px rgba(0,0,0,.05);
 }
 
 .hero h1{
-    color:var(--primary);
-    margin-bottom:10px;
+color:var(--primary);
+margin-bottom:10px;
 }
 
 .hero p{
-    color:#666;
-    line-height:1.6;
+color:#666;
 }
 
-
-/* =========================================
-   MAIN BUTTONS
-========================================= */
-
 .button-area{
-    text-align:center;
-    margin:30px;
+text-align:center;
+margin:30px;
 }
 
 .switch-btn{
-    background:var(--secondary);
-    color:white;
-    border:none;
-    padding:12px 25px;
-    border-radius:8px;
-    cursor:pointer;
-    margin:10px;
-    font-size:16px;
-    transition:.3s;
+background:var(--secondary);
+color:white;
+border:none;
+padding:12px 25px;
+border-radius:8px;
+cursor:pointer;
+margin:10px;
+font-size:16px;
+transition:.3s;
 }
 
 .switch-btn:hover{
-    transform:translateY(-2px);
-    background:#1d4ed8;
+transform:translateY(-2px);
+background:#1d4ed8;
 }
-
-
-/* =========================================
-   CONTAINER
-========================================= */
 
 .container{
-    width:95%;
-    max-width:1400px;
-    margin:auto;
-    padding-bottom:50px;
+width:95%;
+max-width:1400px;
+margin:auto;
+padding-bottom:50px;
 }
-
-
-/* =========================================
-   GRID
-========================================= */
 
 .grid{
-    display:grid;
-    grid-template-columns:
-    repeat(auto-fit,minmax(350px,1fr));
-    gap:25px;
+display:grid;
+grid-template-columns:
+repeat(auto-fit,minmax(350px,1fr));
+gap:25px;
 }
 
-
-/* =========================================
-   CARD
-========================================= */
-
 .card{
-    background:white;
-    padding:25px;
-    border-radius:15px;
-
-    box-shadow:
-        0 5px 15px rgba(0,0,0,.08);
-
-    text-align:center;
-
-    transition:.3s;
-
-    min-height:180px;
+background:white;
+padding:25px;
+border-radius:15px;
+box-shadow:
+0 5px 15px rgba(0,0,0,.08);
+text-align:center;
+transition:.3s;
+min-height:180px;
 }
 
 .card:hover{
-    transform:translateY(-5px);
+transform:translateY(-5px);
 }
 
 .card h3{
-    color:var(--secondary);
-    margin-bottom:10px;
+color:var(--secondary);
+margin-bottom:10px;
 }
 
 .card p{
-    margin-bottom:15px;
-    line-height:1.6;
+margin-bottom:15px;
+line-height:1.6;
 }
 
-
-/* =========================================
-   VIDEO BUTTON
-========================================= */
-
 .video-btn{
-    background:#2563eb;
-    color:white;
-    border:none;
-
-    padding:12px 25px;
-
-    border-radius:8px;
-
-    cursor:pointer;
-
-    font-size:16px;
-
-    transition:.3s;
+background:#2563eb;
+color:white;
+border:none;
+padding:12px 25px;
+border-radius:8px;
+cursor:pointer;
+font-size:16px;
 }
 
 .video-btn:hover{
-    background:#1d4ed8;
+background:#1d4ed8;
 }
-
-
-/* =========================================
-   HIDDEN
-========================================= */
 
 .hidden{
-    display:none;
+display:none;
 }
 
-
-/* =========================================
-   VIDEO
-========================================= */
-
 .video-wrapper{
-    margin-top:20px;
-
-    width:100%;
-
-    height:350px;
-
-    overflow:hidden;
-
-    border-radius:10px;
-
-    background:#000;
+margin-top:20px;
+width:100%;
+height:350px;
+overflow:hidden;
+border-radius:10px;
+background:#000;
 }
 
 .video-wrapper iframe{
-    width:100%;
-    height:100%;
-
-    border:none;
+width:100%;
+height:100%;
+border:none;
 }
-
-
-/* =========================================
-   WORKFLOW INTRO
-========================================= */
-
-.workflow-intro{
-
-    background:#ffffff;
-
-    padding:25px;
-
-    margin-bottom:25px;
-
-    border-radius:12px;
-
-    border:1px solid #e5e7eb;
-
-    box-shadow:
-        0 3px 10px rgba(0,0,0,.05);
-
-    text-align:left;
-}
-
-.workflow-intro h2{
-
-    color:var(--primary);
-
-    margin-bottom:10px;
-
-    font-size:24px;
-}
-
-.workflow-intro p{
-
-    color:#64748b;
-
-    line-height:1.6;
-
-    font-size:15px;
-}
-
-
-/* =========================================
-   SCENARIO SECTION
-========================================= */
 
 #scenarioSection{
-    display:none;
+display:none;
 }
-
-
-/* =========================================
-   MOBILE
-========================================= */
 
 @media(max-width:768px){
 
-    .grid{
-        grid-template-columns:1fr;
-    }
+.grid{
+    grid-template-columns:1fr;
+}
 
-    .video-wrapper{
-        height:250px;
-    }
+.video-wrapper{
+    height:250px;
+}
 
-    .hero{
-        padding:40px 15px;
-    }
+.hero{
+    padding:40px 15px;
+}
 
-    .hero h1{
-        font-size:30px;
-    }
+.hero h1{
+    font-size:30px;
+}
 
-    .switch-btn{
-        width:90%;
-    }
+.switch-btn{
+    width:90%;
+}
 
 }
 
@@ -306,74 +193,71 @@ header{
 
 </head>
 
-
 <body>
 
 
 <!-- =========================================
-     HEADER
+HEADER
 ========================================= -->
 
 <header>
 
-    <h2>Ignova Technologies</h2>
+<h2>Ignova Technologies</h2>
 
-    <a href="index.html"
-       class="back-btn">
+<a href="index.html"
+   class="back-btn">
 
-        ← Back to Home
+    ← Back to Home
 
-    </a>
+</a>
 
 </header>
 
 
 
 <!-- =========================================
-     HERO
+HERO
 ========================================= -->
 
 <section class="hero">
 
-    <h1>Training Portal</h1>
+<h1>Training Portal</h1>
 
-    <p>
-        Recruiter Training, PDFs,
-        Important Information and Scenarios
-    </p>
+<p>
+    Recruiter Training, PDFs,
+    Important Information and Scenarios
+</p>
 
 </section>
 
 
 
 <!-- =========================================
-     MAIN BUTTONS
+MAIN BUTTONS
 ========================================= -->
 
 <div class="button-area">
 
+<!-- TRAINING MATERIALS -->
 
-    <!-- TRAINING MATERIALS -->
+<button
+    class="switch-btn"
+    onclick="openTrainingMaterials()">
 
-    <button
-        class="switch-btn"
-        onclick="openTrainingMaterials()">
+    📚 Training Materials
 
-        📚 Training Materials
-
-    </button>
+</button>
 
 
-    <!-- COMPLETE WORKFLOW -->
+<!-- SCENARIOS -->
 
-    <button
-        class="switch-btn"
-        onclick="showScenarios()">
+<button
+    class="switch-btn"
+    onclick="showScenarios()">
 
-        ▶ Watch Complete Workflow
+    🎯 Scenarios
 
-    </button>
-
+</button>
 
 </div>
 
@@ -383,278 +267,250 @@ header{
 
 
 <!-- =========================================
-     SCENARIO / WORKFLOW SECTION
+SCENARIOS
 ========================================= -->
 
 <div id="scenarioSection">
 
+<div class="grid">
 
-    <!-- =========================================
-         WORKFLOW INTRO
-    ========================================= -->
 
-    <div class="workflow-intro">
+    <!-- =====================================
+         GOOGLE SHEETS
+    ====================================== -->
 
-        <h2>
-            🎥 Complete Recruitment Workflow
-        </h2>
+    <div class="card">
+
+        <h3>
+            Google Sheets
+        </h3>
 
         <p>
-            For a complete understanding of the recruitment
-            workflow, refer to the video recordings below.
-            Please watch the videos carefully and follow
-            the demonstrated process.
+            How to maintain Application
+            Tracking Sheets?
         </p>
 
+        <button
+            class="video-btn"
+            onclick="toggleVideo('sheetVideo')">
+
+            ▶ Watch Video
+
+        </button>
+
+
+        <div
+            id="sheetVideo"
+            class="video-wrapper hidden">
+
+            <iframe
+                src="https://drive.google.com/file/d/1E-cQnBoQWUAioMMpHZT9yby0CEIbsrbZ/preview"
+                allow="autoplay; fullscreen"
+                allowfullscreen>
+            </iframe>
+
+        </div>
+
     </div>
 
 
 
-    <div class="grid">
+    <!-- =====================================
+         JOBRIGHT
+    ====================================== -->
+
+    <div class="card">
+
+        <h3>
+            Jobright
+        </h3>
+
+        <p>
+            Jobright Setup & Filters
+        </p>
+
+        <button
+            class="video-btn"
+            onclick="toggleVideo('jobrightVideo')">
+
+            ▶ Watch Video
+
+        </button>
 
 
-        <!-- =========================================
-             GOOGLE SHEETS
-        ========================================= -->
+        <div
+            id="jobrightVideo"
+            class="video-wrapper hidden">
 
-        <div class="card">
-
-            <h3>
-                Google Sheets
-            </h3>
-
-            <p>
-                How to maintain Application
-                Tracking Sheets?
-            </p>
-
-
-            <button
-                class="video-btn"
-                onclick="toggleVideo('sheetVideo')">
-
-                ▶ Watch Video
-
-            </button>
-
-
-            <div
-                id="sheetVideo"
-                class="video-wrapper hidden">
-
-                <iframe
-                    src="https://drive.google.com/file/d/1E-cQnBoQWUAioMMpHZT9yby0CEIbsrbZ/preview"
-                    allow="autoplay; fullscreen"
-                    allowfullscreen>
-                </iframe>
-
-            </div>
+            <iframe
+                src="https://drive.google.com/file/d/1PysDqjHCWU81RlAmSZEAvpfpbjQ8_G2q/preview"
+                allow="autoplay; fullscreen"
+                allowfullscreen>
+            </iframe>
 
         </div>
-
-
-
-        <!-- =========================================
-             JOBRIGHT
-        ========================================= -->
-
-        <div class="card">
-
-            <h3>
-                Jobright
-            </h3>
-
-            <p>
-                Jobright Setup & Filters
-            </p>
-
-
-            <button
-                class="video-btn"
-                onclick="toggleVideo('jobrightVideo')">
-
-                ▶ Watch Video
-
-            </button>
-
-
-            <div
-                id="jobrightVideo"
-                class="video-wrapper hidden">
-
-                <iframe
-                    src="https://drive.google.com/file/d/1PysDqjHCWU81RlAmSZEAvpfpbjQ8_G2q/preview"
-                    allow="autoplay; fullscreen"
-                    allowfullscreen>
-                </iframe>
-
-            </div>
-
-        </div>
-
-
-
-        <!-- =========================================
-             AI RESUME TAILOR
-        ========================================= -->
-
-        <div class="card">
-
-            <h3>
-                AI Resume Tailor
-            </h3>
-
-            <p>
-                How to use AI Resume Tailor Tool?
-            </p>
-
-
-            <button
-                class="video-btn"
-                onclick="toggleVideo('resumeVideo')">
-
-                ▶ Watch Video
-
-            </button>
-
-
-            <div
-                id="resumeVideo"
-                class="video-wrapper hidden">
-
-                <iframe
-                    src="https://drive.google.com/file/d/1AtXN81i0FdMXIdJsvc0ggStTsd0mMcpp/preview"
-                    allow="autoplay; fullscreen"
-                    allowfullscreen>
-                </iframe>
-
-            </div>
-
-        </div>
-
-
-
-        <!-- =========================================
-             APPLICATION PROCESS
-        ========================================= -->
-
-        <div class="card">
-
-            <h3>
-                Application Process
-            </h3>
-
-            <p>
-                How to do Applications?
-            </p>
-
-
-            <button
-                class="video-btn"
-                onclick="toggleVideo('applicationProcessVideo')">
-
-                ▶ Watch Video
-
-            </button>
-
-
-            <div
-                id="applicationProcessVideo"
-                class="video-wrapper hidden">
-
-                <iframe
-                    src="https://drive.google.com/file/d/1yhDnVunHfsCwEOLTB4deDm7QwVrxZEsg/preview"
-                    allow="autoplay; fullscreen"
-                    allowfullscreen>
-                </iframe>
-
-            </div>
-
-        </div>
-
-
-
-        <!-- =========================================
-             INCOMPLETE APPLICATION
-        ========================================= -->
-
-        <div class="card">
-
-            <h3>
-                Application Incomplete
-            </h3>
-
-            <p>
-                Application Filled &
-                Incomplete Application
-            </p>
-
-
-            <button
-                class="video-btn"
-                onclick="toggleVideo('incompleteVideo')">
-
-                ▶ Watch Video
-
-            </button>
-
-
-            <div
-                id="incompleteVideo"
-                class="video-wrapper hidden">
-
-                <iframe
-                    src="https://drive.google.com/file/d/1tpnXBYBVFu6kBrk9PPMAnudT2NXUiQSm/preview"
-                    allow="autoplay; fullscreen"
-                    allowfullscreen>
-                </iframe>
-
-            </div>
-
-        </div>
-
-
-
-        <!-- =========================================
-             HASHBYHQ
-        ========================================= -->
-
-        <div class="card">
-
-            <h3>
-                HashbyHQ
-            </h3>
-
-            <p>
-                HashbyHQ Site Application Filling
-            </p>
-
-
-            <button
-                class="video-btn"
-                onclick="toggleVideo('hashbyhqVideo')">
-
-                ▶ Watch Video
-
-            </button>
-
-
-            <div
-                id="hashbyhqVideo"
-                class="video-wrapper hidden">
-
-                <iframe
-                    src="https://drive.google.com/file/d/1QcqvheWdRSb7W9qhCmQeaMxL_5QjoN4q/preview"
-                    allow="autoplay; fullscreen"
-                    allowfullscreen>
-                </iframe>
-
-            </div>
-
-        </div>
-
 
     </div>
+
+
+
+    <!-- =====================================
+         AI RESUME
+    ====================================== -->
+
+    <div class="card">
+
+        <h3>
+            AI Resume Tailor
+        </h3>
+
+        <p>
+            How to use AI Resume Tailor Tool?
+        </p>
+
+        <button
+            class="video-btn"
+            onclick="toggleVideo('resumeVideo')">
+
+            ▶ Watch Video
+
+        </button>
+
+
+        <div
+            id="resumeVideo"
+            class="video-wrapper hidden">
+
+            <iframe
+                src="https://drive.google.com/file/d/1AtXN81i0FdMXIdJsvc0ggStTsd0mMcpp/preview"
+                allow="autoplay; fullscreen"
+                allowfullscreen>
+            </iframe>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================
+         APPLICATION PROCESS
+    ====================================== -->
+
+    <div class="card">
+
+        <h3>
+            Application Process
+        </h3>
+
+        <p>
+            How to do Applications?
+        </p>
+
+        <button
+            class="video-btn"
+            onclick="toggleVideo('applicationProcessVideo')">
+
+            ▶ Watch Video
+
+        </button>
+
+
+        <div
+            id="applicationProcessVideo"
+            class="video-wrapper hidden">
+
+            <iframe
+                src="https://drive.google.com/file/d/1yhDnVunHfsCwEOLTB4deDm7QwVrxZEsg/preview"
+                allow="autoplay; fullscreen"
+                allowfullscreen>
+            </iframe>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================
+         INCOMPLETE APPLICATION
+    ====================================== -->
+
+    <div class="card">
+
+        <h3>
+            Application Incomplete
+        </h3>
+
+        <p>
+            Application Filled &
+            Incomplete Application
+        </p>
+
+        <button
+            class="video-btn"
+            onclick="toggleVideo('incompleteVideo')">
+
+            ▶ Watch Video
+
+        </button>
+
+
+        <div
+            id="incompleteVideo"
+            class="video-wrapper hidden">
+
+            <iframe
+                src="https://drive.google.com/file/d/1tpnXBYBVFu6kBrk9PPMAnudT2NXUiQSm/preview"
+                allow="autoplay; fullscreen"
+                allowfullscreen>
+            </iframe>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================
+         HASHBYHQ
+    ====================================== -->
+
+    <div class="card">
+
+        <h3>
+            HashbyHQ
+        </h3>
+
+        <p>
+            HashbyHQ Site Application Filling
+        </p>
+
+        <button
+            class="video-btn"
+            onclick="toggleVideo('hashbyhqVideo')">
+
+            ▶ Watch Video
+
+        </button>
+
+
+        <div
+            id="hashbyhqVideo"
+            class="video-wrapper hidden">
+
+            <iframe
+                src="https://drive.google.com/file/d/1QcqvheWdRSb7W9qhCmQeaMxL_5QjoN4q/preview"
+                allow="autoplay; fullscreen"
+                allowfullscreen>
+            </iframe>
+
+        </div>
+
+    </div>
+
+
+</div>
 
 </div>
 
@@ -663,14 +519,14 @@ header{
 
 
 <!-- =========================================
-     JAVASCRIPT
+JAVASCRIPT
 ========================================= -->
 
 <script>
 
 
 /* =========================================
-   OPEN TRAINING MATERIALS
+OPEN NEW TRAINING MATERIALS PAGE
 ========================================= */
 
 function openTrainingMaterials(){
@@ -682,17 +538,20 @@ function openTrainingMaterials(){
 
 
 /* =========================================
-   VIDEO TOGGLE
+VIDEO TOGGLE
 ========================================= */
 
 function toggleVideo(videoId){
 
     const allVideos =
-        document.querySelectorAll('.video-wrapper');
+        document.querySelectorAll(
+            '.video-wrapper'
+        );
 
 
     /*
-     * First close every other video.
+     * FIRST:
+     * Stop every other video completely.
      */
 
     allVideos.forEach(video => {
@@ -703,21 +562,35 @@ function toggleVideo(videoId){
                 video.querySelector('iframe');
 
 
-            /*
-             * IMPORTANT:
-             * Remove iframe source to completely
-             * stop the previous Google Drive video.
-             */
-
             if(iframe){
 
-                iframe.dataset.src =
-                    iframe.src;
+                /*
+                 * Save the original Google Drive URL
+                 * before removing the iframe.
+                 */
 
-                iframe.src = "about:blank";
+                if(!iframe.dataset.videoSrc){
+
+                    iframe.dataset.videoSrc =
+                        iframe.src;
+
+                }
+
+
+                /*
+                 * Remove iframe completely.
+                 *
+                 * This stops the Google Drive video.
+                 */
+
+                iframe.remove();
 
             }
 
+
+            /*
+             * Hide the old video area.
+             */
 
             video.classList.add('hidden');
 
@@ -727,7 +600,8 @@ function toggleVideo(videoId){
 
 
     /*
-     * Open selected video.
+     * SECOND:
+     * Get the video selected by the user.
      */
 
     const selectedVideo =
@@ -741,67 +615,168 @@ function toggleVideo(videoId){
     }
 
 
-    const selectedIframe =
-        selectedVideo.querySelector('iframe');
-
-
     /*
-     * Restore selected video's original
-     * Google Drive URL if it was stopped.
+     * Check whether the selected video
+     * is currently hidden.
      */
 
-    if(
-        selectedIframe &&
-        selectedIframe.src ===
-        "about:blank"
-    ){
+    const isHidden =
+        selectedVideo.classList.contains('hidden');
 
-        if(selectedIframe.dataset.src){
 
-            selectedIframe.src =
-                selectedIframe.dataset.src;
+    if(isHidden){
+
+        /*
+         * The iframe may have been removed
+         * when another video was selected.
+         */
+
+        let iframe =
+            selectedVideo.querySelector('iframe');
+
+
+        /*
+         * If iframe doesn't exist,
+         * recreate it using the original
+         * Google Drive URL.
+         */
+
+        if(!iframe){
+
+            iframe =
+                document.createElement('iframe');
+
+
+            /*
+             * Get original URL.
+             */
+
+            const savedSrc =
+                selectedVideo.dataset.videoSrc;
+
+
+            /*
+             * If no saved URL exists,
+             * use the original URL associated
+             * with this video.
+             */
+
+            iframe.src =
+                savedSrc ||
+                getVideoURL(videoId);
+
+
+            iframe.allow =
+                "autoplay; fullscreen";
+
+            iframe.allowFullscreen =
+                true;
+
+
+            selectedVideo.appendChild(
+                iframe
+            );
 
         }
 
+
+        /*
+         * Show selected video.
+         */
+
+        selectedVideo.classList.remove(
+            'hidden'
+        );
+
     }
 
+    else{
 
-    selectedVideo.classList.toggle('hidden');
+        /*
+         * User clicked the same video again.
+         *
+         * Remove iframe to stop playback.
+         */
+
+        const iframe =
+            selectedVideo.querySelector('iframe');
+
+
+        if(iframe){
+
+            if(!iframe.dataset.videoSrc){
+
+                iframe.dataset.videoSrc =
+                    iframe.src;
+
+            }
+
+            iframe.remove();
+
+        }
+
+
+        selectedVideo.classList.add(
+            'hidden'
+        );
+
+    }
 
 }
 
 
 
 /* =========================================
-   SHOW COMPLETE WORKFLOW
+ORIGINAL VIDEO URLS
+========================================= */
+
+function getVideoURL(videoId){
+
+    const videoURLs = {
+
+        sheetVideo:
+        "https://drive.google.com/file/d/1E-cQnBoQWUAioMMpHZT9yby0CEIbsrbZ/preview",
+
+        jobrightVideo:
+        "https://drive.google.com/file/d/1PysDqjHCWU81RlAmSZEAvpfpbjQ8_G2q/preview",
+
+        resumeVideo:
+        "https://drive.google.com/file/d/1AtXN81i0FdMXIdJsvc0ggStTsd0mMcpp/preview",
+
+        applicationProcessVideo:
+        "https://drive.google.com/file/d/1yhDnVunHfsCwEOLTB4deDm7QwVrxZEsg/preview",
+
+        incompleteVideo:
+        "https://drive.google.com/file/d/1tpnXBYBVFu6kBrk9PPMAnudT2NXUiQSm/preview",
+
+        hashbyhqVideo:
+        "https://drive.google.com/file/d/1QcqvheWdRSb7W9qhCmQeaMxL_5QjoN4q/preview"
+
+    };
+
+
+    return videoURLs[videoId] || "";
+
+}
+
+
+
+/* =========================================
+SHOW SCENARIOS
 ========================================= */
 
 function showScenarios(){
 
-    const section =
-        document.getElementById(
-            "scenarioSection"
-        );
-
-
-    section.style.display = "block";
-
-
-    /*
-     * Smoothly move to the workflow.
-     */
-
-    section.scrollIntoView({
-        behavior:"smooth",
-        block:"start"
-    });
+    document.getElementById(
+        "scenarioSection"
+    ).style.display = "block";
 
 }
 
 
 
 /* =========================================
-   INITIAL STATE
+INITIAL STATE
 ========================================= */
 
 document.addEventListener(
